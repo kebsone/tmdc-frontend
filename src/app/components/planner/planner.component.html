@@ -1,0 +1,258 @@
+<!-- <div class="p-d-flex p-jc-end p-ai-center p-mr-2 p-ml-2 p-mb-3" *ngIf="mode === 'edit'">
+    <div *ngFor="let poste of TmdcUtils.sortLogicalStation(postes)" class="tm-radio-button ">
+        <button pButton pRipple type="button"
+            [ngClass]="{'p-button-raised p-button-lg': true, 'selected': selectedPoste=== poste.name}"
+            (click)="onPosteChanged(poste.name)">{{poste.name}}</button>
+    </div>
+    <button pButton pRipple type="button" class="p-button-raised p-button-lg  p-ml-auto" [disabled]="!selectedEvent" (click)="addGti()">Add Gti</button>
+
+
+</div> -->
+
+<full-calendar #calendar [options]="calendarOptions" (contextmenu)="onContextMenu($event)">
+</full-calendar>
+<p-contextMenu [global]="true" [model]="items"></p-contextMenu>
+
+<!-- ADD -->
+<p-dialog class="p-d-flex" [(visible)]="displayModalNew" [style]="{width: '70%', height:'70%', top:'50px'}" (onHide)="onCancel()">
+    <p-message></p-message>
+    <p-header>
+        Add new item
+    </p-header>
+    <div class="p-d-flex p-flex-column p-as-center">
+        <div class="p-mb-4">
+            <h3>{{lineTile}}</h3>
+            <p-dropdown [options]="gtisToPlace" [(ngModel)]="selected"
+                (onChange)="onTmdcGtiChange($event)" placeholder="Select Gti" optionLabel="wo">
+            </p-dropdown>
+        </div>
+        <div>
+
+            <p-table #dt [value]="chaptersToPlace" [(selection)]="selectedChapters" dataKey="title">
+                <ng-template pTemplate="caption">
+                    <div class="table-header">
+                        All
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th>Title</th>
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-chapter>
+                    <tr class="p-selectable-row">
+                        <td>
+                            <p-tableCheckbox [value]="chapter"></p-tableCheckbox>
+                        </td>
+                        <td class="p-column-title">{{chapter.numbering}} - {{chapter.title}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="8">No chapters found.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+        </div>
+
+    </div>
+    <p-footer>
+        <div class="ui-dialog-footer">
+            <button type="button" pButton pRipple class="p-mr-2 p-button-danger" (click)="onCancel()">
+                Cancel
+            </button>
+            <button [disabled]="!selected || (!selectedChapters ||selectedChapters.length ==0)" type="button" pButton pRipple class="p-mr-2 p-button-success" (click)="onSave()">
+                Save
+            </button>
+
+        </div>
+    </p-footer>
+</p-dialog>
+
+<!-- EDIT -->
+<p-dialog class="p-d-flex" [style]="{width: '70%', height:'70%', top:'50px'}" [(visible)]="displayModalEdit" (onHide)="onEditModalCancel()">
+    <p-message></p-message>
+    <p-header>
+        Edit item
+    </p-header>
+    <div class="p-d-flex p-flex-column p-as-center">
+
+        <div>
+            <p-table #dt [value]="chaptersAlreadyPlace" [(selection)]="selectedChaptersInEdit" dataKey="title">
+                <ng-template pTemplate="caption">
+                    <div class="table-header">
+                        All
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th>Title</th>
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-chapter>
+                    <tr class="p-selectable-row">
+                        <td>
+                            <p-tableCheckbox [value]="chapter"></p-tableCheckbox>
+                        </td>
+                        <td class="p-column-title">{{chapter.numbering}} - {{chapter.title}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="8">No Chapters found.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+        </div>
+
+    </div>
+    <p-footer>
+        <div class="ui-dialog-footer">
+            <button type="button" pButton pRipple class="p-mr-2 p-button-danger" (click)="onEditModalCancel()">
+                Cancel
+            </button>
+            <button [disabled]="!disabledEdit" mtype="button" pButton pRipple class="p-mr-2 p-button-success" (click)="onEditModalSave()">
+                Save
+            </button>
+
+        </div>
+    </p-footer>
+</p-dialog>
+<!-- DUPLICATE -->
+<p-dialog class="p-d-flex"  [style]="{width: '70%', height:'70%', top:'50px'}" [(visible)]="displayModalDuplicate" (onHide)="onDuplicateModalCancel()">
+    <p-message></p-message>
+    <p-header>
+        Duplicate GTI
+    </p-header>
+    <p-splitter>
+        <ng-template pTemplate>
+            <div style="width: 100%;">
+                <p-listbox [options]="availableResources" [(ngModel)]="resourcesSelection" optionLabel="title" [checkbox]="true"
+                    [filter]="true" [multiple]="true">
+                    <ng-template let-resource pTemplate="item">
+                        <div class="p-d-flex p-ai-center">
+                            <span class="p-mr-2">{{resource.title}}</span>
+                        </div>
+                    </ng-template>
+                </p-listbox>
+            </div>
+        </ng-template>
+        <ng-template pTemplate>
+
+            <div style="width: 100%;">
+                <h3>List of chapters</h3>
+                <p-table *ngIf="availableChapters" [value]="availableChapters" responsiveLayout="scroll">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>chapter</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-chapter>
+                        <tr
+                            [ngClass]="{'tm-row-ns':chapter.status === 'NS', 'tm-row-ip' : chapter.status === 'IP', 'tm-row-at' : chapter.status === 'AT', 'tm-row-fa' : chapter.status === 'FA'}">
+                            <td>{{chapter.numbering}}</td>
+                            <td>{{chapter.title}}</td>
+                            <td>{{chapter.status}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </ng-template>
+    </p-splitter>
+
+    <p-footer>
+        <div class="ui-dialog-footer">
+            <button type="button" pButton pRipple class="p-mr-2 p-button-danger" (click)="onDuplicateModalCancel()">
+                Cancel
+            </button>
+            <button [disabled]="!resourcesSelection || resourcesSelection.length ==0" mtype="button" pButton pRipple class="p-mr-2 p-button-success" (click)="onDuplicateModalSave()">
+                Save
+            </button>
+
+        </div>
+    </p-footer>
+</p-dialog>
+
+<!-- Details view -->
+<p-dialog class="p-d-flex" [style]="{width: '70%', height:'70%', top:'50px'}" [(visible)]="displayModalDetailsView" >
+    <p-message></p-message>
+    <p-header>
+        Details view of {{selectedGti?.wo}}
+    </p-header>
+    <!-- <div class="p-d-flex p-flex-row "> -->
+    <div class="p-d-flex p-jc-between p-mb-2 tm-details-header">
+        <div class="p-d-flex p-flex-column p-jc-center">
+            <span class="tm-bold ">MSN</span>
+            <span>{{currentMsn.msnNumber}}</span>
+        </div>
+        <div class="p-d-flex p-flex-column p-jc-center"><span class="tm-bold">Poste</span>
+            <span>{{currentMsn.selectedPoste}}</span>
+        </div>
+        <div class="p-d-flex p-flex-column p-jc-center"><span class="tm-bold">Line</span>
+            <span>{{selectedGti?.line?.title}}</span>
+        </div>
+        <div class="p-d-flex p-flex-column p-jc-center"><span class="tm-bold">GTI Title</span>
+            <span>{{selectedGti?.title}}</span>
+        </div>
+        <div class="p-d-flex p-flex-column p-jc-center"><span class="tm-bold">GTI Réf</span>
+            <span>{{selectedGti?.wo}}</span>
+        </div>
+
+    </div>
+
+    <div>
+        <!-- GTI informations -->
+        <div class="p-d-flex p-flex-column">
+            <div class="p-d-flex">
+            </div>
+            <p-tabView>
+                <p-tabPanel header="Chapters">
+                    <p-table *ngIf="selectedGti && availableChapters"
+                        [value]="TmdcUtils.sortChapters(availableChapters)" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>chapter</th>
+                                <th>Title</th>
+                                <th>Status</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-chapter>
+                            <tr
+                                [ngClass]="{'tm-row-ns':chapter.status === 'NS', 'tm-row-ip' : chapter.status === 'IP', 'tm-row-at' : chapter.status === 'AT', 'tm-row-fa' : chapter.status === 'FA'}">
+                                <td>{{chapter.numbering}}</td>
+                                <td>{{chapter.title}}</td>
+                                <td>{{chapter.status}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-tabPanel>
+                <p-tabPanel header="NCs">
+                    NCs
+                </p-tabPanel>
+                <p-tabPanel header="URs">
+                    User Request
+                </p-tabPanel>
+            </p-tabView>
+
+
+
+        </div>
+    </div>
+
+
+</p-dialog>
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+
+<p-toast></p-toast>

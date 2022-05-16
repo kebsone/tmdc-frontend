@@ -1,0 +1,69 @@
+:host {
+    .tm-line {
+        background-color: rgb(66, 91, 138);
+        color: white;
+        size: 18px;
+        font-weight: bold;
+    }
+    .tm-row-progess {
+        background-color: rgb(247, 255, 60);
+    }
+
+    .tm-line-at {
+        background-color: rgb(136, 159, 201);
+        color: black;
+        font-weight: bold;
+    }
+
+    p-treeTable:hover {
+        animation: none;
+    }
+
+    .product-item {
+        .product-item-content {
+            border: 1px solid var(--surface-d);
+            border-radius: 3px;
+            margin: 0.3rem;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .product-image {
+            width: 50%;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+    }
+
+    p-carousel {
+        height: 500px;
+    }
+
+    ::ng-deep {
+        .ui-steps .ui-steps-item {
+            width: 25%;
+        }
+
+        .ui-steps.steps-custom {
+            margin-bottom: 30px;
+        }
+
+        .ui-steps.steps-custom .ui-steps-item .ui-menuitem-link {
+            padding: 0 1em;
+            overflow: visible;
+        }
+
+        .ui-steps.steps-custom .ui-steps-item .ui-steps-number {
+            background-color: #0081c2;
+            color: #ffffff;
+            display: inline-block;
+            width: 36px;
+            border-radius: 50%;
+            margin-top: -14px;
+            margin-bottom: 10px;
+        }
+
+        .ui-steps.steps-custom .ui-steps-item .ui-steps-title {
+            color: #555555;
+        }
+    }
+}

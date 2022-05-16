@@ -1,0 +1,827 @@
+
+
+        [
+            {
+                "msn": "20579",
+                "start": "2022-02-21 06:00:00",
+            "end": "2022-02-23 21:00:00",
+                "gtiList":[ {
+                    "rgti_title": "GTI Test",
+                    "reference": "1-012-120",
+                    "status": "NS",
+                    "chapters": [
+                        {
+                        "numbering": "1",
+                        "duration": 25,
+                         "status": "NS",
+                        "ac_testunit_title": "Chap 1"
+                        } ,
+                        {
+                            "numbering": "2",
+                             "status": "NS",
+                             "duration": 30,
+                            "ac_testunit_title": "Chap 2"
+                            },
+                            {
+                                "numbering": "3",
+                                 "status": "NS",
+                                 "duration": 30,
+                                "ac_testunit_title": "Chap 3"
+                                }
+
+                    ],
+
+                "rgti_reference": "1-012-120"
+                }, {
+                    "rgti_title": "Title",
+                    "reference": "1-013-120",
+                    "logical_station_short_name": "P17",
+                    "status": "NS",
+                    "chapters": [
+                        {
+                        "numbering": "1",
+                         "status": "NS",
+                        "ac_testunit_title": "Chap 1"
+                        } ,
+                        {
+                            "numbering": "2",
+                             "status": "NS",
+                            "ac_testunit_title": "Chap 2"
+                            },
+                            {
+                                "numbering": "3",
+                                 "status": "NS",
+                                "ac_testunit_title": "Chap 3"
+                                }
+
+                    ],
+               "rgti_reference": "1-013-120"
+                }, {
+                    "rgti_title": "Test ",
+                    "reference": "1-014-120",
+                    "logical_station_short_name": "P20",
+                    "status": "NS",
+                    "chapters": [
+                        {
+                        "numbering": "1",
+                         "status": "NS",
+                        "ac_testunit_title": "Chap 1"
+                        } ,
+                        {
+                            "numbering": "2",
+                             "status": "NS",
+                            "ac_testunit_title": "Chap 2"
+                            },
+                            {
+                                "numbering": "3",
+                                 "status": "NS",
+                                "ac_testunit_title": "Chap 3"
+                                }
+
+                    ],
+                    "rgti_reference": "1-014-120"
+                }, {
+                    "rgti_title": "Application",
+                    "reference": "1-015-120",
+                    "logical_station_short_name": "P20",
+                    "status": "NS",
+                    "chapters": [
+                        {
+                        "numbering": "1",
+                         "status": "NS",
+                        "ac_testunit_title": "Chap 1"
+                        } ,
+                        {
+                            "numbering": "2",
+                             "status": "NS",
+                            "ac_testunit_title": "Chap 2"
+                            },
+                            {
+                                "numbering": "3",
+                                 "status": "NS",
+                                "ac_testunit_title": "Chap 3"
+                                }
+
+                    ],
+                    "rgti_reference": "1-015-120"
+                },
+                {
+                    "rgti_title": "gestion des erreurs",
+                    "reference": "1-016-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "chapters": [
+                        {
+                        "numbering": "1",
+                         "status": "NS",
+                         "duration": 30,
+                        "ac_testunit_title": "Chap 1"
+                        } ,
+                        {
+                            "numbering": "2",
+                             "status": "NS",
+                             "duration": 30,
+                            "ac_testunit_title": "Chap 2"
+                            },
+                            {
+                                "numbering": "3",
+                                "duration": 30,
+                                 "status": "NS",
+                                "ac_testunit_title": "Chap 3"
+                                }
+
+                    ],
+                    "rgti_reference": "1-016-120"
+                },
+                {
+                    "rgti_title": "GTI Test avion",
+                    "reference": "1-017-120",
+                    "rgti_reference": "1-017-120",
+                "logical_station_short_name": "P17",
+                    "status": "NS"
+                },
+                {
+                    "rgti_title": "Procédure",
+                    "reference": "1-018-120",
+                    "chapters": [],
+                    "rgti_reference": "1-018-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+                },
+                {
+                    "rgti_title": "autres tests",
+                    "reference": "1-019-120",
+                    "rgti_reference": "1-019-120",
+                    "chapters": [
+                        {
+                        "numbering": "1",
+                         "status": "NS",
+                         "duration": 90,
+                        "ac_testunit_title": "Chap 1test"
+                        } ,
+                        {
+                            "numbering": "2",
+                             "status": "NS",
+                             "duration": 12,
+                            "ac_testunit_title": "Chap 2test"
+                            },
+                            {
+                                "numbering": "3",
+                                 "status": "NS",
+                                "ac_testunit_title": "Chap 3test"
+                                }
+
+                    ],
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+
+                },
+                {
+                    "rgti_title": "GTI Test",
+                    "reference": "2-011-120",
+                    "logical_station_short_name": "P30",
+                    "chapters": [],
+                    "status": "NS",
+                    "rgti_reference": "2-011-120"
+                }
+                ],
+                "status": "DECLARED",
+                "engine_type":"AX_250"
+            },
+            {
+                "msn": "19556",
+                "gtiList":[{
+                    "rgti_title": "GTI Test",
+                    "reference": "1-012-120",
+                    "status": "NS",
+                    "chapters":[],
+                "rgti_reference": "1-012-120"
+                }, {
+                    "rgti_title": "Title",
+                    "reference": "1-013-120",
+                    "logical_station_short_name": "P17",
+                    "status": "NS",
+                    "chapters":[],
+                "rgti_reference": "1-013-120"
+                }, {
+                    "rgti_title": "Test ",
+                    "reference": "1-014-120",
+                    "logical_station_short_name": "P40",
+                    "status": "NS",
+                    "chapters":[],
+                    "rgti_reference": "1-014-120"
+                }, {
+                    "rgti_title": "Application",
+                    "reference": "1-015-120",
+                    "logical_station_short_name": "P20",
+                    "status": "NS",
+                    "chapters":[],
+                    "rgti_reference": "1-015-120"
+                },
+                {
+                    "rgti_title": "gestion des erreurs",
+                    "reference": "1-016-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "chapters":[],
+                    "rgti_reference": "1-016-120"
+                },
+                {
+                    "rgti_title": "GTI Test avion",
+                    "reference": "1-017-120",
+                    "rgti_reference": "1-017-120",
+                    "chapters":[],
+                "logical_station_short_name": "P40",
+                    "status": "NS"
+                },
+                {
+                    "rgti_title": "Procédure",
+                    "reference": "1-018-120",
+
+                    "rgti_reference": "1-018-120",
+                    "status": "NS",
+                    "chapters":[],
+                    "logical_station_short_name":"P40"
+                },
+                {
+                    "rgti_title": "autres tests",
+                    "reference": "1-019-120",
+                    "rgti_reference": "1-019-120",
+                    "status": "NS",
+                    "chapters":[],
+                    "logical_station_short_name":"P40"
+
+                },
+                {
+                    "rgti_title": "GTI Test",
+                    "reference": "2-011-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "chapters":[],
+                    "rgti_reference": "2-011-120"
+                }
+                ],
+                "status": "DECLARED",
+                "engine_type":"AX_250"
+
+
+            },
+            {
+                "msn": "18554",
+                "gtiList":[{
+                    "rgti_title": "GTI Test",
+                    "reference": "1-012-120",
+                    "chapters":[],
+                    "status": "NS",
+
+                "rgti_reference": "1-012-120"
+                }, {
+                    "rgti_title": "Title",
+                    "reference": "1-013-120",
+                    "chapters":[],
+                    "logical_station_short_name": "P17",
+                    "status": "NS",
+                "rgti_reference": "1-013-120"
+                }, {
+                    "rgti_title": "Test ",
+                    "reference": "1-014-120",
+                    "chapters":[],
+                    "logical_station_short_name": "P40",
+                    "status": "NS",
+                    "rgti_reference": "1-014-120"
+                }, {
+                    "rgti_title": "Application",
+                    "reference": "1-015-120",
+                    "chapters":[],
+                    "logical_station_short_name": "P20",
+                    "status": "NS",
+                    "rgti_reference": "1-015-120"
+                },
+                {
+                    "rgti_title": "gestion des erreurs",
+                    "reference": "1-016-120",
+                    "chapters":[],
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "rgti_reference": "1-016-120"
+                },
+                {
+                    "rgti_title": "GTI Test avion",
+                    "reference": "1-017-120",
+                    "chapters":[],
+                    "rgti_reference": "1-017-120",
+                "logical_station_short_name": "P40",
+                    "status": "NS"
+                },
+                {
+                    "rgti_title": "Procédure",
+                    "reference": "1-018-120",
+                    "chapters":[],
+                    "rgti_reference": "1-018-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+                },
+                {
+                    "rgti_title": "autres tests",
+                    "reference": "1-019-120",
+                    "rgti_reference": "1-019-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+
+                },
+                {
+                    "rgti_title": "GTI Test",
+                    "reference": "2-011-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "rgti_reference": "2-011-120"
+                }
+                ],
+                "status": "DECLARED",
+                "engine_type":"AX_250"
+            },
+            {
+                "msn": "17551",
+                "gtiList":[{
+                    "rgti_title": "GTI Test",
+                    "reference": "1-012-120",
+                    "status": "NS",
+
+                "rgti_reference": "1-012-120"
+                }, {
+                    "rgti_title": "Title",
+                    "reference": "1-013-120",
+                    "logical_station_short_name": "P17",
+                    "status": "NS",
+                "rgti_reference": "1-013-120"
+                }, {
+                    "rgti_title": "Test ",
+                    "reference": "1-014-120",
+                    "logical_station_short_name": "P40",
+                    "status": "NS",
+                    "rgti_reference": "1-014-120"
+                }, {
+                    "rgti_title": "Application",
+                    "reference": "1-015-120",
+                    "logical_station_short_name": "P20",
+                    "status": "NS",
+                    "rgti_reference": "1-015-120"
+                },
+                {
+                    "rgti_title": "gestion des erreurs",
+                    "reference": "1-016-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "rgti_reference": "1-016-120"
+                },
+                {
+                    "rgti_title": "GTI Test avion",
+                    "reference": "1-017-120",
+                    "rgti_reference": "1-017-120",
+                "logical_station_short_name": "P40",
+                    "status": "NS"
+                },
+                {
+                    "rgti_title": "Procédure",
+                    "reference": "1-018-120",
+
+                    "rgti_reference": "1-018-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+                },
+                {
+                    "rgti_title": "autres tests",
+                    "reference": "1-019-120",
+                    "rgti_reference": "1-019-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+
+                },
+                {
+                    "rgti_title": "GTI Test",
+                    "reference": "2-011-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "rgti_reference": "2-011-120"
+                }
+                ],
+                "status": "DECLARED",
+                "engine_type":"AX_250"
+            },
+            {
+                "msn": "16550",
+                "gtiList":[{
+                    "rgti_title": "GTI Test",
+                    "reference": "1-012-120",
+                    "status": "NS",
+
+                "rgti_reference": "1-012-120"
+                }, {
+                    "rgti_title": "Title",
+                    "reference": "1-013-120",
+                    "logical_station_short_name": "P17",
+                    "status": "NS",
+                "rgti_reference": "1-013-120"
+                }, {
+                    "rgti_title": "Test ",
+                    "reference": "1-014-120",
+                    "logical_station_short_name": "P20",
+                    "status": "IP",
+                    "rgti_reference": "1-014-120"
+                }, {
+                    "rgti_title": "Application",
+                    "reference": "1-015-120",
+                    "logical_station_short_name": "P20",
+                    "status": "FA",
+                    "rgti_reference": "1-015-120"
+                },
+                {
+                    "rgti_title": "gestion des erreurs",
+                    "reference": "1-016-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "rgti_reference": "1-016-120"
+                },
+                {
+                    "rgti_title": "GTI Test avion",
+                    "reference": "1-017-120",
+                    "rgti_reference": "1-017-120",
+                "logical_station_short_name": "P20",
+                    "status": "NS"
+                },
+                {
+                    "rgti_title": "Procédure",
+                    "reference": "1-018-120",
+
+                    "rgti_reference": "1-018-120",
+                    "status": "IP",
+                    "logical_station_short_name":"P40"
+                },
+                {
+                    "rgti_title": "autres tests",
+                    "reference": "1-019-120",
+                    "rgti_reference": "1-019-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+
+                },
+                {
+                    "rgti_title": "GTI Test",
+                    "reference": "2-011-120",
+                    "logical_station_short_name": "P30",
+                    "status": "AT",
+                    "rgti_reference": "2-011-120"
+                }
+                ],
+                "status": "DECLARED",
+                "engine_type":"AX_250"
+            },
+            {
+                "msn": "15549",
+                "gtiList":[{
+                    "rgti_title": "GTI Test",
+                    "reference": "1-012-120",
+                    "status": "AT",
+
+                "rgti_reference": "1-012-120"
+                }, {
+                    "rgti_title": "Title",
+                    "reference": "1-013-120",
+                    "logical_station_short_name": "P17",
+                    "status": "NS",
+                "rgti_reference": "1-013-120"
+                }, {
+                    "rgti_title": "Test ",
+                    "reference": "1-014-120",
+                    "logical_station_short_name": "P40",
+                    "status": "NS",
+                    "rgti_reference": "1-014-120"
+                }, {
+                    "rgti_title": "Application",
+                    "reference": "1-015-120",
+                    "logical_station_short_name": "P20",
+                    "status": "NS",
+                    "rgti_reference": "1-015-120"
+                },
+                {
+                    "rgti_title": "gestion des erreurs",
+                    "reference": "1-016-120",
+                    "logical_station_short_name": "P30",
+                    "status": "AT",
+                    "rgti_reference": "1-016-120"
+                },
+                {
+                    "rgti_title": "GTI Test avion",
+                    "reference": "1-017-120",
+                    "rgti_reference": "1-017-120",
+                "logical_station_short_name": "P40",
+                    "status": "AT"
+                },
+                {
+                    "rgti_title": "Procédure",
+                    "reference": "1-018-120",
+
+                    "rgti_reference": "1-018-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+                },
+                {
+                    "rgti_title": "autres tests",
+                    "reference": "1-019-120",
+                    "rgti_reference": "1-019-120",
+                    "status": "IP",
+                    "logical_station_short_name":"P40"
+
+                },
+                {
+                    "rgti_title": "GTI Test",
+                    "reference": "2-011-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "rgti_reference": "2-011-120"
+                }
+                ],
+                "status": "DECLARED",
+                "engine_type":"AX_250"
+            },
+            {
+                "msn": "14548",
+                "gtiList":[{
+                    "rgti_title": "GTI Test",
+                    "reference": "1-012-120",
+                    "status": "AT",
+
+                "rgti_reference": "1-012-120"
+                }, {
+                    "rgti_title": "Title",
+                    "reference": "1-013-120",
+                    "logical_station_short_name": "P17",
+                    "status": "NS",
+                "rgti_reference": "1-013-120"
+                }, {
+                    "rgti_title": "Test ",
+                    "reference": "1-014-120",
+                    "logical_station_short_name": "P40",
+                    "status": "NS",
+                    "rgti_reference": "1-014-120"
+                }, {
+                    "rgti_title": "Application",
+                    "reference": "1-015-120",
+                    "logical_station_short_name": "P20",
+                    "status": "IP",
+                    "rgti_reference": "1-015-120"
+                },
+                {
+                    "rgti_title": "gestion des erreurs",
+                    "reference": "1-016-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "rgti_reference": "1-016-120"
+                },
+                {
+                    "rgti_title": "GTI Test avion",
+                    "reference": "1-017-120",
+                    "rgti_reference": "1-017-120",
+                "logical_station_short_name": "P40",
+                    "status": "IP"
+                },
+                {
+                    "rgti_title": "Procédure",
+                    "reference": "1-018-120",
+
+                    "rgti_reference": "1-018-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+                },
+                {
+                    "rgti_title": "autres tests",
+                    "reference": "1-019-120",
+                    "rgti_reference": "1-019-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+
+                },
+                {
+                    "rgti_title": "GTI Test",
+                    "reference": "2-011-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "rgti_reference": "2-011-120"
+                }
+                ],
+                "status": "DECLARED",
+                "engine_type":"AX_250"
+            },
+            {
+                "msn": "13547",
+                "gtiList":[],
+                "status": "DECLARED",
+                "engine_type":"AX_250"
+            },
+
+            {
+                "msn": "12542",
+                "gtiList":[{
+                    "rgti_title": "GTI Test",
+                    "reference": "1-012-120",
+                    "status": "NS",
+
+                "rgti_reference": "1-012-120"
+                }, {
+                    "rgti_title": "Title",
+                    "reference": "1-013-120",
+                    "logical_station_short_name": "P17",
+                    "status": "NS",
+                "rgti_reference": "1-013-120"
+                }, {
+                    "rgti_title": "Test ",
+                    "reference": "1-014-120",
+                    "logical_station_short_name": "P40",
+                    "status": "NS",
+                    "rgti_reference": "1-014-120"
+                }, {
+                    "rgti_title": "Application",
+                    "reference": "1-015-120",
+                    "logical_station_short_name": "P20",
+                    "status": "AT",
+                    "rgti_reference": "1-015-120"
+                },
+                {
+                    "rgti_title": "gestion des erreurs",
+                    "reference": "1-016-120",
+                    "logical_station_short_name": "P30",
+                    "status": "AT",
+                    "rgti_reference": "1-016-120"
+                },
+                {
+                    "rgti_title": "GTI Test avion",
+                    "reference": "1-017-120",
+                    "rgti_reference": "1-017-120",
+                "logical_station_short_name": "P40",
+                    "status": "FA"
+                },
+                {
+                    "rgti_title": "Procédure",
+                    "reference": "1-018-120",
+
+                    "rgti_reference": "1-018-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+                },
+                {
+                    "rgti_title": "autres tests",
+                    "reference": "1-019-120",
+                    "rgti_reference": "1-019-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+
+                },
+                {
+                    "rgti_title": "GTI Test",
+                    "reference": "2-011-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "rgti_reference": "2-011-120"
+                }
+                ],
+                "status": "DECLARED",
+                "engine_type":"AX_250"
+            },
+
+            {
+                "msn": "11536",
+                "gtiList":[{
+                    "rgti_title": "GTI Test",
+                    "reference": "1-012-120",
+                    "status": "IP",
+
+                "rgti_reference": "1-012-120"
+                }, {
+                    "rgti_title": "Title",
+                    "reference": "1-013-120",
+                    "logical_station_short_name": "P17",
+                    "status": "NS",
+                "rgti_reference": "1-013-120"
+                }, {
+                    "rgti_title": "Test ",
+                    "reference": "1-014-120",
+                    "logical_station_short_name": "P40",
+                    "status": "NS",
+                    "rgti_reference": "1-014-120"
+                }, {
+                    "rgti_title": "Application",
+                    "reference": "1-015-120",
+                    "logical_station_short_name": "P20",
+                    "status": "NS",
+                    "rgti_reference": "1-015-120"
+                },
+                {
+                    "rgti_title": "gestion des erreurs",
+                    "reference": "1-016-120",
+                    "logical_station_short_name": "P30",
+                    "status": "IP",
+                    "rgti_reference": "1-016-120"
+                },
+                {
+                    "rgti_title": "GTI Test avion",
+                    "reference": "1-017-120",
+                    "rgti_reference": "1-017-120",
+                "logical_station_short_name": "P40",
+                    "status": "NS"
+                },
+                {
+                    "rgti_title": "Procédure",
+                    "reference": "1-018-120",
+
+                    "rgti_reference": "1-018-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+                },
+                {
+                    "rgti_title": "autres tests",
+                    "reference": "1-019-120",
+                    "rgti_reference": "1-019-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+
+                },
+                {
+                    "rgti_title": "GTI Test",
+                    "reference": "2-011-120",
+                    "logical_station_short_name": "P30",
+                    "status": "AT",
+                    "rgti_reference": "2-011-120"
+                }
+                ],
+                "status": "CREATED",
+                "engine_type":"AX_250"
+            },
+            {
+                "msn": "10535",
+                "status": "DECLARED",
+                "gtiList":[{
+                    "rgti_title": "GTI Test",
+                    "reference": "1-012-120",
+                    "status": "IP",
+
+                "rgti_reference": "1-012-120"
+                }, {
+                    "rgti_title": "Title",
+                    "reference": "1-013-120",
+                    "logical_station_short_name": "P17",
+                    "status": "NS",
+                "rgti_reference": "1-013-120"
+                }, {
+                    "rgti_title": "Test ",
+                    "reference": "1-014-120",
+                    "logical_station_short_name": "P40",
+                    "status": "NS",
+                    "rgti_reference": "1-014-120"
+                }, {
+                    "rgti_title": "Application",
+                    "reference": "1-015-120",
+                    "logical_station_short_name": "P20",
+                    "status": "NS",
+                    "rgti_reference": "1-015-120"
+                },
+                {
+                    "rgti_title": "gestion des erreurs",
+                    "reference": "1-016-120",
+                    "logical_station_short_name": "P30",
+                    "status": "NS",
+                    "rgti_reference": "1-016-120"
+                },
+                {
+                    "rgti_title": "GTI Test avion",
+                    "reference": "1-017-120",
+                    "rgti_reference": "1-017-120",
+                "logical_station_short_name": "P40",
+                    "status": "NS"
+                },
+                {
+                    "rgti_title": "Procédure",
+                    "reference": "1-018-120",
+
+                    "rgti_reference": "1-018-120",
+                    "status": "AT",
+                    "logical_station_short_name":"P40"
+                },
+                {
+                    "rgti_title": "autres tests",
+                    "reference": "1-019-120",
+                    "rgti_reference": "1-019-120",
+                    "status": "NS",
+                    "logical_station_short_name":"P40"
+
+                },
+                {
+                    "rgti_title": "GTI Test",
+                    "reference": "2-011-120",
+                    "logical_station_short_name": "P30",
+                    "status": "AT",
+                    "rgti_reference": "2-011-120"
+                }
+                ],
+                "engine_type":"AX_250"
+            }
+        ]

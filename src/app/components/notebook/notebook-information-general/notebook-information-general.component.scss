@@ -1,0 +1,22 @@
+:host{
+  ::ng-deep{
+
+    .tm-td{
+      .p-inputtext{
+        width:100% !important;
+        display: flex;
+        border: none;
+      }
+
+p-celleditor{
+  width: 100%;
+}
+    }
+
+    .p-datatable .p-datatable-tbody > tr > td {
+      padding: 0.2rem 1rem !important;
+    }
+
+
+  }
+}

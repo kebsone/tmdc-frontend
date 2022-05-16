@@ -1,0 +1,30 @@
+<tm-header></tm-header>
+<div class="tm-program-name p-mt-4 p-mb-4" *ngIf="programName$ | async as prog" (click)="backToProgramPage()">
+    <img alt="image" src="assets/{{prog}}.svg" />
+</div>
+
+<hr class="p-d-flex p-ai-centerp-jc-center" style="width: 150px;">
+<div class="tm-content">
+
+    <span>Please choose a Production site to view the list of msn</span>
+
+    <div class="p-ai-center p-mt-4">
+
+        <div class="p-d-flex  p-jc-center p-ai-center" *ngIf="sites$ | async as data">
+            <div class="tm-card-content p-mr-4" *ngFor="let site of data">
+                <div class="tm-site-card p-d-flex p-flex-column p-ai-center p-jc-between" (click)="siteChosed(site)">
+                    <img alt="component" class="p-mt-4" [height]="70" [width]="300" src="assets/Airbus_logo_Blue.png" />
+
+                    <span class="p-mb-4"
+                        style="font-size: 20px; font-family: fantasy;">{{site.production_location_id}}</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div *ngIf="showSpinner" class="p-mt-auto progress-spinner">
+    <p-progressSpinner [style]="{width: '100px', height: '100px'}" styleClass="custom-spinner" strokeWidth="4"
+        fill="var(--surface-ground)"></p-progressSpinner>
+</div>

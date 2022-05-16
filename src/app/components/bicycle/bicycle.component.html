@@ -1,0 +1,499 @@
+<p-toast></p-toast>
+<p-card header="BICYCLE - COMPETENCE/LINE" >
+<p-fieldset legend="Managers Lines" [toggleable]="true" collapsed="true">
+    <p-card header="MSN 0 - FAL TEMPLATE" >
+        <p-tabView>
+            <p-tabPanel header="P35">
+                <p-card>
+                    <!-- <p>Station :   <p-dropdown [options]="msn" ngModel="selectedMsn" optionLabel="name" class="dropdown"></p-dropdown></p> -->
+                    <p-table [value]="managerLines" dataKey="id" editMode="row" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th hidden class="hidden">Login</th>
+                                <th>Line</th>
+                                <th>Day</th>
+                                <th>Night</th>
+                                <th>VSD</th>
+                                <th style="width:8rem"></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-manager let-editing="editing" let-ri="rowIndex">
+                            <tr [pEditableRow]="manager">
+                                <td hidden class="hidden">
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.id" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                            {{manager.id}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input" >
+                                            <input pInputText type="text" [(ngModel)]="manager.line" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output" >
+                                            {{manager.line}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.day">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                       {{manager.day}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.night">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                          {{manager.night}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.vsd">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                           {{manager.vsd}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td style="text-align:center">
+                                    <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(manager)" class="p-button-rounded p-button-text"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(manager)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(manager, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-card>
+            </p-tabPanel>
+            <p-tabPanel header="P30">
+                <p-card>
+                    <!-- <p>Station :   <p-dropdown [options]="msn" ngModel="selectedMsn" optionLabel="name" class="dropdown"></p-dropdown></p> -->
+                    <p-table [value]="p30" dataKey="id" editMode="row" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th hidden class="hidden">Login</th>
+                                <th>Line</th>
+                                <th>Day</th>
+                                <th>Night</th>
+                                <th>VSD</th>
+                                <th style="width:8rem"></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-manager let-editing="editing" let-ri="rowIndex">
+                            <tr [pEditableRow]="manager">
+                                <td hidden class="hidden">
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.id" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                            {{manager.id}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input" >
+                                            <input pInputText type="text" [(ngModel)]="manager.line" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output" >
+                                            {{manager.line}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.day">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                       {{manager.day}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.night">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                          {{manager.night}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.vsd">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                           {{manager.vsd}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td style="text-align:center">
+                                    <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(manager)" class="p-button-rounded p-button-text"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(manager)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(manager, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-card>
+            </p-tabPanel>
+            <p-tabPanel header="P18">
+                <p-card>
+                    <!-- <p>Station :   <p-dropdown [options]="msn" ngModel="selectedMsn" optionLabel="name" class="dropdown"></p-dropdown></p> -->
+                    <p-table [value]="p18" dataKey="id" editMode="row" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th hidden class="hidden">Login</th>
+                                <th>Line</th>
+                                <th>Day</th>
+                                <th>Night</th>
+                                <th>VSD</th>
+                                <th style="width:8rem"></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-manager let-editing="editing" let-ri="rowIndex">
+                            <tr [pEditableRow]="manager">
+                                <td hidden class="hidden">
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.id" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                            {{manager.id}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input" >
+                                            <input pInputText type="text" [(ngModel)]="manager.line" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output" >
+                                            {{manager.line}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.day">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                       {{manager.day}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.night">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                          {{manager.night}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.vsd">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                           {{manager.vsd}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td style="text-align:center">
+                                    <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(manager)" class="p-button-rounded p-button-text"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(manager)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(manager, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-card>
+            </p-tabPanel>
+            <p-tabPanel header="P20">
+                <p-card>
+                    <!-- <p>Station :   <p-dropdown [options]="msn" ngModel="selectedMsn" optionLabel="name" class="dropdown"></p-dropdown></p> -->
+                    <p-table [value]="managerLines" dataKey="id" editMode="row" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th hidden class="hidden">Login</th>
+                                <th>Line</th>
+                                <th>Day</th>
+                                <th>Night</th>
+                                <th>VSD</th>
+                                <th style="width:8rem"></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-manager let-editing="editing" let-ri="rowIndex">
+                            <tr [pEditableRow]="manager">
+                                <td hidden class="hidden">
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.id" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                            {{manager.id}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input" >
+                                            <input pInputText type="text" [(ngModel)]="manager.line" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output" >
+                                            {{manager.line}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.day">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                       {{manager.day}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.night">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                          {{manager.night}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.vsd">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                           {{manager.vsd}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td style="text-align:center">
+                                    <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(manager)" class="p-button-rounded p-button-text"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(manager)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(manager, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-card>
+            </p-tabPanel>
+            <p-tabPanel header="WP">
+                <p-card>
+                    <!-- <p>Station :   <p-dropdown [options]="msn" ngModel="selectedMsn" optionLabel="name" class="dropdown"></p-dropdown></p> -->
+                    <p-table [value]="managerLines" dataKey="id" editMode="row" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th hidden class="hidden">Login</th>
+                                <th>Line</th>
+                                <th>Day</th>
+                                <th>Night</th>
+                                <th>VSD</th>
+                                <th style="width:8rem"></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-manager let-editing="editing" let-ri="rowIndex">
+                            <tr [pEditableRow]="manager">
+                                <td hidden class="hidden">
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.id" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                            {{manager.id}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input" >
+                                            <input pInputText type="text" [(ngModel)]="manager.line" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output" >
+                                            {{manager.line}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.day">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                       {{manager.day}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.night">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                          {{manager.night}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.vsd">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                           {{manager.vsd}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td style="text-align:center">
+                                    <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(manager)" class="p-button-rounded p-button-text"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(manager)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(manager, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-card>
+            </p-tabPanel>
+            <p-tabPanel header="P15">
+                <p-card>
+                    <!-- <p>Station :   <p-dropdown [options]="msn" ngModel="selectedMsn" optionLabel="name" class="dropdown"></p-dropdown></p> -->
+                    <p-table [value]="managerLines" dataKey="id" editMode="row" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th hidden class="hidden">Login</th>
+                                <th>Line</th>
+                                <th>Day</th>
+                                <th>Night</th>
+                                <th>VSD</th>
+                                <th style="width:8rem"></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-manager let-editing="editing" let-ri="rowIndex">
+                            <tr [pEditableRow]="manager">
+                                <td hidden class="hidden">
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.id" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                            {{manager.id}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input" >
+                                            <input pInputText type="text" [(ngModel)]="manager.line" readonly>
+                                        </ng-template>
+                                        <ng-template pTemplate="output" >
+                                            {{manager.line}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.day">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                       {{manager.day}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.night">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                          {{manager.night}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td>
+                                    <p-cellEditor>
+                                        <ng-template pTemplate="input">
+                                            <input pInputText type="text" [(ngModel)]="manager.vsd">
+                                        </ng-template>
+                                        <ng-template pTemplate="output">
+                                           {{manager.vsd}}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td style="text-align:center">
+                                    <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(manager)" class="p-button-rounded p-button-text"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(manager)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+                                    <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(manager, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-card>
+            </p-tabPanel>
+        </p-tabView>
+    </p-card>
+</p-fieldset>
+
+<p-tabView>  
+    <p-tabPanel header="P18">
+        <div class="container py-5">
+            <div class="row" cdkDropListGroup style="display:inline-flex;
+            background: white;
+            border-radius: 4px;">
+              <div class="col-sm-12 col-md-6 col-lg-4" style="border: solid 1px #ccc;
+              background: white; border-radius: 2px;
+              " *ngFor="let msnGroup of msnGroups" cdkDropList [cdkDropListData]="msnGroup.msn" (cdkDropListDropped)="onMsnDrop($event)">
+          
+                <div class="bg-light shadow rounded p-3"  >
+                  <h3 style="text-align: center;" class="font-weight-normal">{{ msnGroup.title }}  </h3>
+                  <p style="border-bottom: 1px;border-bottom-style: solid;">{{msnGroup.subtitle1}}   -   {{msnGroup.subtitle2}}</p>
+                  <div style="background-color:#2195f354;" class="bg-white shadow my-3 p-4" *ngFor="let msn of msnGroup.msn" cdkDrag>
+                    <p style="cursor: move;border-bottom: 1px;border-bottom-style: solid;">{{ msn.title }} {{ msn.description }}</p>
+                    <!-- <p class="lead mb-0">{{ msn.description }}</p> -->
+                  </div>
+                </div>
+          
+              </div>
+            </div>
+        </div>
+    </p-tabPanel>
+    <p-tabPanel header="P20">
+        Content 1
+     </p-tabPanel>
+     <p-tabPanel header="WP">
+        Content 2
+     </p-tabPanel>
+     <p-tabPanel header="P15">
+        Content 3
+     </p-tabPanel>
+</p-tabView>
+</p-card>

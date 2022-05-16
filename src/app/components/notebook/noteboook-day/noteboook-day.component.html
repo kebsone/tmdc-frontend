@@ -1,0 +1,43 @@
+    <p-toast></p-toast>
+
+    <!-- MORNING -->
+   <p-fieldset class="morning" legend="MORNING"  [toggleable]="true" [collapsed]="false" >
+
+    <div class="tm-notebook-day-container p-grid">
+        <div class="p-col-12 p-md-10 p-lg-12">
+          <tm-notebook-information-general [currentDay]="currentDay" [currentNotebook]="currentNotebook" [dayTime]="'Morning'"></tm-notebook-information-general>
+
+        </div>
+
+    <div class="p-col-12 p-md-10 p-lg-12 ">
+      <tm-notebook-gti [currentNotebook]="currentNotebook" [dayTime]="'MORNING'" [currentDay]="currentDay"></tm-notebook-gti>
+    </div>
+
+    </div>
+  </p-fieldset>
+  <!-- EVENING -->
+  <p-fieldset class="evening" legend="EVENING"  [toggleable]="true" [collapsed]="true">
+
+<div class="tm-notebook-day-container p-grid">
+<div class="p-col-12 p-md-10 p-lg-12">
+          <tm-notebook-information-general [currentDay]="currentDay"  [currentNotebook]="currentNotebook" [dayTime]="'Evening'"></tm-notebook-information-general>
+
+        </div>
+
+    <div class="p-col-12 p-md-10 p-lg-12"> <tm-notebook-gti [dayTime]="'EVENING'" [currentDay]="currentDay" [currentNotebook]="currentNotebook"></tm-notebook-gti></div>
+
+</div>
+</p-fieldset>
+<!-- NIGHT -->
+<p-fieldset   legend="NIGHT" class="p-mt-2 night"  [toggleable]="true" [collapsed]="true">
+<div class="tm-notebook-day-container p-grid">
+  <div class="p-col-12 p-md-10 p-lg-12">
+    <tm-notebook-information-general [currentDay]="currentDay" [currentNotebook]="currentNotebook" [dayTime]="'Night'"></tm-notebook-information-general>
+
+  </div>
+
+    <div class="p-col-12 p-md-10 p-lg-12"> <tm-notebook-gti [currentDay]="currentDay" [currentNotebook]="currentNotebook" [dayTime]="'Night'"></tm-notebook-gti></div>
+
+</div>
+</p-fieldset>
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

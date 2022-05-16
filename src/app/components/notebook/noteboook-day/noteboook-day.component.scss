@@ -1,0 +1,79 @@
+:host{
+    .tm-notebook-day-container{
+
+
+    }
+::ng-deep{
+
+  ::ng-deep{
+    .p-fieldset{
+      margin-bottom: 10px;
+    }
+    .p-fieldset.p-fieldset-toggleable .p-fieldset-legend  a {
+      padding: 0.6rem !important;
+      color: white
+
+    }
+    .morning{
+      .p-fieldset .p-fieldset-legend {
+        background-color: rgb(118, 201, 236) !important;
+
+
+       }
+       .p-fieldset{
+         background-color: #d2e8ef;
+       }
+    }
+    .evening{
+      margin-top:10px !important;
+      .p-fieldset .p-fieldset-legend {
+        background-color: rgb(9, 76, 105) !important;
+
+       }
+       .p-fieldset{
+        background-color: #115f76c2;
+      }
+    }
+    .night{
+      .p-fieldset .p-fieldset-legend {
+        background-color: rgb(2, 33, 46) !important;
+
+       }
+
+       .p-fieldset{
+        background-color: #0a3846f5;
+      }
+    }
+
+  }
+
+    .gti-action{
+      .p-button.p-button-icon-only {
+        background-color: none !important;
+       border-color:  none !important;
+      }
+
+
+    .pi-plus:before {
+      content: "\e90d";
+      color: rgb(81, 247, 81) !important
+  }
+
+  .pi-pencil:before {
+    content: "\e942";
+    color: rgb(251, 251, 106);
+}
+
+.pi-search:before {
+  content: "\e908";
+  color: rgb(240, 185, 165)
+
+}
+.pi-trash:before {
+  content: "\e93d";
+  color: red
+}
+}
+}
+
+}

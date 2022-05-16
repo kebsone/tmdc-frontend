@@ -1,0 +1,93 @@
+<!-- HEADER -->
+<div class="tmdc-header  p-mb-2">
+  <div  class="tm-sub-header p-d-flex p-ai-center p-ml-2 p-mr-2 p-jc-between">
+   <div class="p-d-flex">  <span
+    (click)="backToProgramListPage()">{{TmdcUtils.formatName(currentProgram.name)}}</span>
+<span class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+</span>
+<span  (click)="backToSiteListPage()"> {{currentSite.name}} </span>
+<span class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+</span>
+<span (click)="backToMsnsListPage()" >
+  MSN {{currentMsn.msn}}
+</span>
+<span class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+</span>
+<span (click)="backToMsnsListPage()" >
+  {{currentMsn.principalPoste}}
+</span>
+</div>
+<!-- Notebook -->
+<div >
+  <span class="start p-mr-2">
+      <i class="pi pi-map-marker p-mr-1"></i>{{currentMsn?.start}}
+  </span>
+  <span class="end"><i class="pi pi-map-marker p-mr-1"></i>{{currentMsn?.end}}</span>
+</div>
+
+
+</div>
+  <div class="p-d-flex tm-notebook-header p-ai-center">
+    <div class="p-d-flex">
+      <div *ngFor="let note of notebook" class="tm-radio-button" let i="index">
+        <button pButton pRipple type="button" (click)="onWeekChanged(note,index)"
+            [ngClass]="{'p-button-raised': true, 'selected': note.selected}"
+            >{{note.position}}</button>
+    </div>
+  </div>
+  <div class="p-d-flex p-jc-center p-ml-auto" style="color: white;">
+  <span >Wekk: {{selectedNotebook.weekNumber}}</span>
+</div>
+    <div class="p-d-flex p-jc-center p-ml-auto" style="color: white;">
+
+      <span class="p-mr-4">From: {{selectedNotebook.from}}</span>
+      <span >To: {{selectedNotebook.to}}</span>
+</div>
+   <div class="p-ml-auto p-d-flex tm-notebook-header-button">
+    <div class="p-d-flex p-jc-center p-ai-center ">
+      <button
+      class="p-mr-2 p-ml-2 p-d-flex"
+      type="button"
+      pButton
+      pRipple
+      icon="pi pi-print"></button>
+       </div>
+    <div class="p-d-flex p-jc-center p-ai-center tm-br-l">
+   <button
+   class="p-mr-2 p-ml-2 p-d-flex"
+   type="button"
+   pButton
+   pRipple
+   pTooltip="Gérer les dates E/S du MSN"
+   icon="pi pi-calendar"></button>
+    </div>
+    <div class="p-d-flex p-jc-center p-ai-center tm-br-l">
+   <button
+    type="button"
+    pButton
+    class="p-mr-2 p-ml-2 p-d-flex button-add"
+    pRipple
+    pTooltip="Gérer les jours fériés"
+   ></button>
+  </div>
+</div>
+</div>
+
+   </div>
+              <div  *ngIf="selectedNotebook">
+                       <p-tabView>
+                <p-tabPanel *ngFor="let day of alldays; let i =index" [selected]="i==0" >
+                  <ng-template pTemplate="header">
+                    <div class="p-d-flex p-flex-column p-jc-center p-ai-center">
+                    <span>
+                      {{day.name}}
+                    </span>
+                    <span>
+                     {{day.date}}
+                    </span>
+                  </div>
+                  </ng-template>
+                  <tm-noteboook-day [currentDay]="day" [currentNotebook]="selectedNotebook"></tm-noteboook-day>
+              </p-tabPanel>
+                           </p-tabView>
+         </div>

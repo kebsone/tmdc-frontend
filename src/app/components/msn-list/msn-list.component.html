@@ -1,0 +1,90 @@
+<div class="tmdc-header p-mb-3">
+  <div style="z-index: 20000; height: 50px; color:white" class="p-d-flex p-ai-center  p-jc-between tm-br-b">
+   <div class="p-d-flex p-ml-2 p-mr-2"> <span
+    (click)="backToProgramPage()">Test</span>
+<span class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+</span>
+<span (click)="backToProdutionSitePage()" >
+    {{currentSite.name}}
+</span>
+</div>
+TMDC
+<div>
+
+</div>
+  </div>
+  <div class="p-d-flex p-jc-between p-ai-center tm-msn-header p-ml-2">
+    <!-- <div class="p-d-flex">
+        <button pButton pRipple type="button" class="p-button-raised  p-button-lg"
+            (click)="backToProgramPage()">{{TmdcUtils.formatName(currentProgram.name)}}</button>
+        <div class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+        </div>
+        <button (click)="backToProdutionSitePage()" pButton pRipple type="button"
+            class="p-button-raised p-button-lg">
+            {{currentSite.name}}
+        </button>
+    </div> -->
+
+    <div class="p-d-flex p-jc-between">
+        <p-autoComplete styleClass="p-mr-2" [size]="6" [(ngModel)]="selectedMsn" placeholder="Filter MSN"
+            [showEmptyMessage]="true" [suggestions]="msnSuggestions" (completeMethod)="filterMsn($event)"
+            field="msn" [minLength]="1" (onSelect)="onSelect()" (onClear)="clearMsn($event)" [dropdown]="true">
+        </p-autoComplete>
+
+        <!-- Filter MSN STATUS -->
+        <p-dropdown [options]="msnStatus" placeholder="Status" [showClear]="true" (onChange)="filterStatus()"
+            [(ngModel)]="selectedStatus" (onClear)="clearStatus()">
+        </p-dropdown>
+        <div>
+            <!-- Filter MSN Line -->
+            <p-dropdown *ngIf="currentSite.ac_program_id === 'N' && currentSite.id !== 'sa_fal_toulouse'"
+                [options]="sortProductionLines(currentSite.production_lines)" placeholder="Production line"
+                [showClear]="true" (onChange)="filterLine()" optionLabel="short_name" [(ngModel)]="selectedLine"
+                (onClear)="clearLine()">
+            </p-dropdown>
+
+
+            <!-- Filter Logical  STATION -->
+            <p-multiSelect class="p-mr-2"
+            [style]="{width:'100px'}"
+                *ngIf="currentSite.ac_program_id !== 'N' || currentSite.id === 'sa_fal_toulouse'"
+                [options]="sortLogicalStations(currentSite.logical_stations)" optionLabel="short_name"
+                [(ngModel)]="selectedStations" defaultLabel="Logical  Station" scrollHeight="250px"
+                (onChange)="filterStation()">
+            </p-multiSelect>
+            <!-- Filter Physical  STATION -->
+            <p-multiSelect
+            [style]="{width:'100px'}"
+             *ngIf="!isFalHambourg && !isFalMob && !isFalTianjin" [options]="physicalStations"
+                optionLabel="description" [(ngModel)]="selectedPhysicalStations" defaultLabel="Physical station"
+                scrollHeight="250px">
+            </p-multiSelect>
+        </div>
+    </div>
+    <button (click)="openPlannerMsn0()" pButton  type="button" label="Bicycle 000"
+    ></button>
+
+</div>
+
+   </div>
+
+    <div class="p-d-flex p-flex-wrap p-jc-center p-ai-center"
+        *ngIf="filteredMsns && filteredMsns.length > 0; else noResult">
+        <div *ngFor="let msn of filteredMsns;  let i =index">
+            <tm-msn-card [msn]="msn" [index]='i' [rootGtis]="rootGtiList" (showSpiner)="getShowSpinnerValue($event)"
+                [selectedProgram]="currentProgram" [currentSite]="currentSite"></tm-msn-card>
+
+        </div>
+    </div>
+    <ng-template #noResult class="p-grid">
+        <h1 class="tm-no-result" *ngIf="hasFilter">
+            Sorry, we couldn't find any results
+        </h1>
+
+    </ng-template>
+
+
+<div *ngIf="showSpinner" class="p-mt-auto progress-spinner">
+    <p-progressSpinner [style]="{width: '100px', height: '100px'}" styleClass="custom-spinner" strokeWidth="4"
+        fill="var(--surface-ground)"></p-progressSpinner>
+</div>

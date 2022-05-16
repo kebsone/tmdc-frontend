@@ -1,0 +1,36 @@
+<div class="p-d-flex p-jc-center p-ai-center">
+    <div>
+        <div class="card">
+            <p-toast></p-toast>
+            <p-steps class="p-ml-6 p-mr-6 p-mt-6" [model]="items" [readonly]="false"></p-steps>
+        </div>
+        <router-outlet></router-outlet>
+        <p-carousel class="p-d-flex p-ai-center" [value]="fals" styleClass="custom-carousel" [numVisible]="3"
+            [numScroll]="0" [circular]="true">
+
+
+
+            <ng-template pTemplate="header">
+            </ng-template>
+            <ng-template let-fal pTemplate="item">
+                <div class="product-item" (click)="openMsnList(fal)" style="cursor: pointer;">
+                    <div class="product-item-content">
+                        <div class="p-mb-3">
+                            <img src="assets/{{fal.img}}" [alt]="fal.title" class="product-image" />
+                        </div>
+                        <div>
+
+                            <div class="car-buttons p-mt-5">
+
+                                <p-button type="button" styleClass="p-button-success p-button-rounded"
+                                    (click)="openMsnList(fal)">
+                                    Edit
+                                </p-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>

@@ -1,0 +1,172 @@
+<div class="tm-msn-card p-mb-2 p-mr-1" [ngClass]="{'tm-msn-bg tm-br-black' : isOddIndex}">
+    <div class="p-d-flex tm-br-b">
+        <div class="p-d-flex p-flex-column tm-br-r tm-msn-number-width">
+
+            <!-- <span class="p-mt-1 tm-msn-card-number"></span> -->
+            <p-badge class="p-mt-1 tm-msn-card-number" severity="warning" [value]="msn.msn"></p-badge>
+            <div class="p-d-flex p-flex-column">
+                <div class="p-d-flex p-jc-between p-ml-1 p-mr-1">
+                    <span>{{versionRank}}</span>
+                    <span>Status: {{msn.status}}</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="p-d-flex p-flex-column tm-msn-number-width">
+            <div class=" p-d-flex p-jc-between p-mt-1 p-mr-1 p-ml-1">
+                <span class="tm-bold"
+                    *ngIf="currentSite.ac_program_id !== 'N' || currentSite.id === 'sa_fal_toulouse'">P20</span>
+                <span class="tm-bold"
+                    *ngIf="currentSite.ac_program_id === 'N' && currentSite.id !== 'sa_fal_toulouse'">Line:
+                    03</span>
+                <span>FOT: 07/02/01</span>
+            </div>
+
+            <span>Paint: 07/02/01</span>
+            <p-progressBar class="p-mr-1 p-ml-1 p-mb-1" [value]="35"></p-progressBar>
+        </div>
+    </div>
+    <div class="p-d-flex p-jc-between tm-br-b">
+        <span class="p-m-1">Model: Model</span>
+        <span class="p-m-1">Engine: {{msn.engine_type}}</span>
+
+    </div>
+    <table class="tm-msn-card-table tm-br-b-black">
+        <tr>
+            <td>AREA</td>
+            <td>OPEN GTIs</td>
+            <td>OPEN RTIs</td>
+            <td>NCs</td>
+        </tr>
+        <tr>
+            <td>GREEN</td>
+            <td style="cursor: pointer;" (click)="goToGtiDetails()">
+                <span style="font-weight: bold;">{{openedGti(msn.gtiList)}}</span>
+                / {{msn.gtiList?.length}}
+            </td>
+            <td style="cursor: pointer;" (click)="goToRootGtiDetails()">0</td>
+
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>CABIN</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+
+        </tr>
+        <tr>
+            <td>KT</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+
+        </tr>
+    </table>
+    <div class="tm-br-black tm-comment-list">
+        <!-- <div *ngIf="commentsToDisplay() && commentsToDisplay().length>0">
+            <div *ngFor="let comment of commentsToDisplay()" class="p-d-flex p-jc-start tm-br-b-black"
+                style="padding: 8px;">
+                <span>{{comment.value}}</span>
+            </div>
+        </div> -->
+    </div>
+    <div class="p-d-flex p-jc-center p-ai-center p-mt-1">
+        <input type="text" [(ngModel)]="responsable" class="p-inputtext-sm" pInputText placeholder="Name">
+        <button pButton type="button" (click)="addResponsable()" icon="pi pi-check" class="p-button-sm"></button>
+        <div *ngIf="currentResponsable" style="padding: 5px; margin-bottom: 5px;">
+            <p-chip label="{{currentResponsable}}" icon="pi pi-user"></p-chip>
+            <i class="pi pi-trash p-ml-2" (click)="removeResponsable()"></i>
+        </div>
+    </div>
+
+</div>
+
+<!-- <p-dialog [(visible)]="displayCommentModal" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
+    [style]="{width: '50vw'}">
+    <div class="p-d-flex p-flex-column">
+        <span class="tm-bold p-mb-2">{{product.msn}}</span>
+        <div class="p-d-flex p-jc-between p-ai-center">
+            <h5>Line: {{product.line}}</h5>
+            <h5>Status: {{product.status}}</h5>
+            <h5>Model: {{product.model}}</h5>
+            <h5>Engine: {{product.motor}}</h5>
+            <h5>GTIs: 50</h5>
+        </div>
+        <div class="card">
+            <p-toolbar styleClass="p-mb-2">
+                <ng-template pTemplate="left">
+                    <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2"
+                        (click)="openNew()"></button>
+
+                </ng-template>
+
+            </p-toolbar>
+            <p-table [value]="product.comments" dataKey="id" editMode="row" responsiveLayout="scroll">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>User</th>
+                        <th>Date</th>
+                        <th>Comment</th>
+                        <th>To Show</th>
+                        <th style="width:8rem"></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-comment let-editing="editing" let-ri="rowIndex">
+                    <tr [pEditableRow]="comment">
+                        <td>
+                            {{comment.user}}
+                        </td>
+                        <td>
+                            {{comment.date}}
+                        </td>
+                        <td>
+                            <p-cellEditor>
+                                <ng-template pTemplate="input">
+                                    <textarea type="text" pInputTextarea [(ngModel)]="comment.value"></textarea>
+                                </ng-template>
+                                <ng-template pTemplate="output">
+                                    {{comment.value}}
+                                </ng-template>
+                            </p-cellEditor>
+                        </td>
+                        <td>
+                            <p-cellEditor>
+                                <ng-template pTemplate="input">
+                                    <p-checkbox [(ngModel)]="comment.toDisplay" binary="true" inputId="binary">
+                                    </p-checkbox>
+                                </ng-template>
+                                <ng-template pTemplate="output">
+                                    <p-checkbox [(ngModel)]="comment.toDisplay" binary="true" inputId="binary"
+                                        [readonly]="true">
+                                    </p-checkbox>
+                                </ng-template>
+                            </p-cellEditor>
+                        </td>
+                        <td style="text-align:center">
+                            <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil"
+                                (click)="onRowEditInit(comment)" class="p-button-rounded p-button-text"></button>
+                            <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check"
+                                (click)="onRowEditSave(comment)"
+                                class="p-button-rounded p-button-text p-button-success mr-2"></button>
+                            <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times"
+                                (click)="onRowEditCancel(comment, ri)"
+                                class="p-button-rounded p-button-text p-button-danger"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+
+
+    </div>
+
+
+</p-dialog>
+<p-dialog [(visible)]="addCommentvalueModal" header="New comment">
+    <div class="p-d-flex p-flex-column">
+        <textarea class="p-mb-4" type="text" pInputTextarea [(ngModel)]="newCommentValue" [rows]="5"
+            [cols]="35"></textarea>
+        <p-button (click)="onAddNewComment()">Save</p-button>
+    </div>
+</p-dialog> -->

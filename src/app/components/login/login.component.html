@@ -1,0 +1,71 @@
+<div class="content p-d-flex p-flex-column">
+
+    <div style="height: 120px; background: #E2E2E2;" class="tm-br-b p-d-flex p-ai-center p-jc-center">
+        <span style="color :#011133; font-weight: bold;">AIRBUS</span>
+    </div>
+    <div style="height:50%" class="p-grid p-fluid p-d-flex p-flex-column p-ai-center p-jc-center">
+        <div class="p-col-12 p-md-10 p-sm-1">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input type="text" pInputText placeholder="Username" [(ngModel)]="userName">
+            </div>
+        </div>
+
+        <div class="p-col-12 p-md-10 ">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+                <input type="password" pInputText placeholder="Password" [(ngModel)]="password">
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="p-d-flex p-jc-center p-ai-center">
+        <button (click)="onSubmit()" [disabled]="!userName || !password">
+            <span>Submit</span>
+        </button>
+    </div>
+</div>
+<!-- <p-toast></p-toast>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <p-panel class="login">
+        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Login:
+                </div>
+                <div class="ui-grid-col-6">
+                    <input pInputText type="text" formControlName="login" class="form-control" name="login">
+                </div>
+                <div class="ui-grid-col-4">
+                    <div [hidden]="loginForm.controls['login'].valid || !loginForm.controls['login'].dirty" class="alert alert-danger">
+                        Le nom d'utilisateur est requis
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Password:
+                </div>
+                <div class="ui-grid-col-6">
+                    <input pInputText type="password" formControlName="password" class="form-control" name="password">
+                </div>
+                <div class="ui-grid-col-4">
+                    <div [hidden]="loginForm.controls['password'].valid || !loginForm.controls['password'].dirty" class="alert alert-danger">
+                        Le mot de passe est requis
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2"></div>
+                <div class="ui-grid-col-6">
+                    <button pButton type="submit" label="Se connecter" [disabled]="!loginForm.valid"></button>
+                </div>
+                <div class="ui-grid-col-4"></div>
+            </div>
+        </div>
+    </p-panel>
+</form>
+>>>>>>> 151e73b807e298f5158337b6434de341b47f0daa -->

@@ -1,0 +1,172 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variables.scss';
+.tm-badge-green {
+    color: chartreuse !important;
+    font-size: 0.8rem !important;
+}
+.fc-highlight {
+    background-color: lightblue !important;
+}
+
+.tm-badge-red {
+    color: red !important;
+    font-size: 0.8rem !important;
+}
+.tm-ar {
+    text-align: right !important;
+}
+
+.p-menu .p-menuitem-link .pi .pi-circle-on {
+    color: red !important;
+    margin-right: 0.5rem;
+}
+
+.p-treetable .p-treetable-tbody > tr.p-highlig {
+    background: rgb(248, 248, 206) !important;
+}
+
+.tm-bold {
+    font-weight: bold;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0.5rem !important;
+    border: solid 1px #ccc;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.fc-day-grid-container.fc-scroller {
+    height: auto !important;
+    overflow-y: auto !important;
+}
+.fc-today-button,
+.fc-addGtiButton-button,
+.fc-addRtiButton-button,
+.fc-adminButton-button {
+    color: #22c55e !important;
+    background: #fff !important;
+    border: 1px solid #22c55e !important;
+    font-size: 1rem !important;
+    border-radius: 0.5rem !important;
+}
+.fc-h-event .fc-event-title-container {
+    font-weight: 100 !important;
+    padding: 0.5rem;
+}
+
+.fc-timeline-slot .fc-timeline-slot-label .fc-slot .fc-slot-sat .fc-slot-past {
+    background-color: red !important;
+}
+
+.fc .fc-timeline-header-row-chrono .fc-timeline-slot-frame {
+    justify-content: center;
+}
+
+.fc .fc-timeline-event-harness,
+.fc .fc-timeline-more-link {
+    margin: 0.2rem;
+    z-index: 500000000;
+}
+
+.fc .fc-timeline-lane-frame,
+.fc-datagrid-cell-frame {
+    position: relative;
+    height: 30px !important;
+}
+
+.fc-timeline-overlap-disabled .fc-timeline-event {
+    padding: 0 !important;
+}
+.tm-red {
+    color: red;
+}
+
+.p-orderlist-controls {
+    content-visibility: hidden;
+    padding: 0rem !important;
+}
+
+// tr:nth-of-type(odd) {
+//     background-color: rgba(35, 150, 226, 0.411) !important;
+// }
+.p-card {
+    border-style: groove;
+}
+.p-divider.p-divider-horizontal {
+    margin: 0rem 0 !important;
+}
+
+.fc-license-message {
+    display: none !important;
+}
+
+.p-button.p-button-info.p-button-outlined,
+.p-buttonset.p-button-info > .p-button.p-button-outlined,
+.p-splitbutton.p-button-info > .p-button.p-button-outlined {
+    background-color: transparent;
+    color: #0288d1;
+    border: 1px solid;
+    margin-left: 10px;
+}
+.p-multiselect-items-wrapper {
+    max-height: fit-content !important;
+}
+
+.p-card .p-card-content {
+    padding: 0px !important;
+}
+.p-card .p-card-body {
+    padding: 0px !important;
+    padding-left: 5px !important;
+}
+
+
+.tm-br-b {
+    border-bottom: solid 1px #ccc;
+}
+.tm-br-t {
+    border-top: solid 1px #ccc;
+}
+
+.tm-br-r {
+    border-right: solid 1px #ccc;
+}
+
+.tm-br-l {
+    border-left: solid 1px #ccc;
+}
+.tm-br {
+    border: solid 1px #ccc;
+}
+
+.tm-white-text {
+    color: white;
+}
+
+.tm-cursor-pointer {
+    cursor: pointer;
+}
+.progress-spinner {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* Transparent Overlay */
+.progress-spinner:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.53);
+}

@@ -1,0 +1,45 @@
+<div class="tm-header p-d-flex p-jc-between tm-br-b">
+    <div class="p-d-flex ">
+        <div class="p-d-flex  tm-br-r p-ai-center p-jc-center">
+            <img [height]="40" src="assets/AIRBUS_WHITE.png" alt="logo" />
+        </div>
+        <div class="p-d-flex p-flex-column tm-br-r">
+          <span *ngIf="currentProgram" pButton pRipple type="button"
+              (click)="backToProgramPage()">{{TmdcUtils.formatName(currentProgram.name)}}</span>
+          <!-- <div class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+          </div> -->
+          <span *ngIf="currentSite" (click)="backToProdutionSitePage()" pButton pRipple type="button"
+              >
+              {{currentSite.name}}
+          </span>
+      </div>
+
+    </div>
+
+    <div class="tm-header-tmdc-title p-d-flex p-ai-center p-jc-center">
+        <h3 class="tm-white-text">TMDC</h3>
+    </div>
+    <div class="p-d-flex p-jc-center p-ai-center tm-br-l">
+        <button class="p-mr-4 p-ml-5 p-d-flex " type="button" pButton icon="pi pi-bars"
+            (click)="menu.toggle($event)"></button>
+        <p-menu #menu [popup]="true" [model]="items"></p-menu>
+    </div>
+</div>
+<p-confirmDialog [style]="{width: '30vw'}" [position]="'right'"></p-confirmDialog>
+<p-toast></p-toast>
+<div class="p-d-flex p-ai-center p-jc-center p-mr-2">
+
+    <p-dialog header="TMDC - Information" [(visible)]="displayBasic" [style]="{width: '50vw'}">
+        <span>
+            <h4>Version : V2.8.9.59</h4>
+            <h4>Documentation : <a
+                    href="file://sfs.corp/Projects/PROGRAMMES/QUALITY_GROUND_TEST/GTSA/DATA_PROD/USER_GUIDE/USER_GUIDE_TMDC_FR.html">User
+                    Guide</a> </h4>
+            <h4>Contact Us : <a href="mailto:support.tmdc@airbus.com">support</a></h4>
+        </span>
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" (click)="displayBasic=false" label="Ok" styleClass="p-button-text">
+            </p-button>
+        </ng-template>
+    </p-dialog>
+</div>

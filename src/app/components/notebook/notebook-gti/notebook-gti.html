@@ -1,0 +1,177 @@
+<p-table>
+  <ng-template pTemplate="caption">
+    <div class="p-d-flex">
+        <button type="button" pButton pRipple icon="pi pi-plus"  (click)="addDailyCom()" class="p-button-success p-mr-2" pTooltip="Add" tooltipPosition="bottom"></button>
+        <button type="button" pButton pRipple icon="pi pi-pencil"   pTooltip="Edit" class="p-mr-2" tooltipPosition="bottom"></button>
+        <button type="button" pButton pRipple icon="pi pi-search"  class="p-button-warning p-ml-auto p-mr-2" pTooltip="Search" tooltipPosition="bottom"></button>
+        <button type="button" pButton pRipple icon="pi pi-trash"  class="p-button-danger" pTooltip="Delete" tooltipPosition="bottom"></button>
+    </div>
+</ng-template>
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Line</th>
+          <th>ATA</th>
+          <th>Test/CDO number</th>
+          <th>description</th>
+          <th>Status</th>
+          <th>Information</th>
+          <th>Repair Status</th>
+          <th>User Name</th>
+          <th>Attached file(s)</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body">
+      <tr>
+          <td>product.code</td>
+          <td>product.name</td>
+          <td>product.category</td>
+          <td>product.quantity</td>
+      </tr>
+  </ng-template>
+</p-table>
+
+<p-dialog [(visible)]="addDailyCommunication" [style]="{top: '35px'}" header="TMDC - Daily communication" [modal]="true" styleClass="p-fluid">
+  <ng-template pTemplate="content">
+    <!-- Date Day time -->
+    <div class="p-formgrid p-grid">
+      <div class="p-field  p-col">
+        <label for="date">Date</label>
+        <input type="text" readonly pInputText id="date"  [(ngModel)]="dailyCommunication.date"   required autofocus />
+      </div>
+    <div class="p-field  p-col">
+      <label for="dayTime">Day time</label>
+      <input type="text" readonly pInputText id="dayTime"  [(ngModel)]="dailyCommunication.dayTime" required autofocus />
+
+  </div>
+   <!-- MSN Poste -->
+  <div class="p-field p-col">
+    <label for="msn">MSN</label>
+    <input type="text" readonly pInputText id="msn"   [(ngModel)]="dailyCommunication.msn" required autofocus />
+</div>
+<div class="p-field p-col">
+  <label for="poste">Current poste</label>
+  <input type="text" readonly pInputText id="poste"  [(ngModel)]="dailyCommunication.msn" required autofocus />
+</div>
+  </div>
+
+  <p-divider></p-divider>
+
+  <!-- CHOIX GTI/RTI OU CDO -->
+  <div class="p-d-flex p-ai-center p-jc-center p-mt-3 p-mb-2">
+    <div class="field-radiobutton p-mr-3">
+      <p-radioButton class="p-mr-1" name="gti" value="gti" [(ngModel)]="dailyCommunication.type"  inputId="gti"></p-radioButton>
+      <label for="gti">GTI/RTI</label>
+  </div>
+  <div class="field-radiobutton">
+    <p-radioButton class="p-mr-1" name="cdo" value="cdo"  inputId="cdo"  [(ngModel)]="dailyCommunication.type"></p-radioButton>
+    <label for="cdo">CDO</label>
+  </div>
+  </div>
+
+<!-- GTI/RTI SELECTED Compotence line -->
+  <div class="p-formgrid p-grid" *ngIf="dailyCommunication.type == 'gti'">
+    <div class="p-field p-col-3">
+        <label for="msn">Competence Line</label>
+        <p-autoComplete  [dropdown]="true" required [(ngModel)]="dailyCommunication.competenceLine" [showEmptyMessage]="true"  field="competence" [minLength]="1"></p-autoComplete>
+        <small class="p-error" *ngIf="submitted && !dailyCommunication.competenceLine">Information is required.</small>
+      </div>
+    <div class="p-field p-col-2">
+      <label for="poste">ATA</label>
+      <p-autoComplete  [dropdown]="true" required [(ngModel)]="dailyCommunication.ataNumber" [showEmptyMessage]="true"  field="ata" [minLength]="1"></p-autoComplete>
+      <small class="p-error" *ngIf="submitted && !dailyCommunication.ataNumber" >Information is required.</small>
+    </div>
+    <div class="p-field p-col-7">
+      <label for="poste">GTI / RTI</label>
+      <p-autoComplete  [dropdown]="true" required [(ngModel)]="dailyCommunication.gtiRti" [showEmptyMessage]="true"  field="gtiRti" [minLength]="1"></p-autoComplete>
+      <small class="p-error"  *ngIf="submitted && !dailyCommunication.gtiRti">Information is required.</small>
+    </div>
+</div>
+
+<!-- CDO SELECTED ATA -->
+<div class="p-formgrid p-grid" *ngIf="dailyCommunication.type == 'cdo'">
+
+  <div class="p-field p-col-4">
+    <label for="poste">ATA</label>
+    <p-autoComplete  [dropdown]="true" required [(ngModel)]="dailyCommunication.ataNumber" [showEmptyMessage]="true"  field="ataCdo" [minLength]="1"></p-autoComplete>
+    <small class="p-error" >Information is required.</small>
+  </div>
+  <div class="p-field p-col-8">
+    <label for="poste">CDO</label>
+    <p-autoComplete  [dropdown]="true" required [(ngModel)]="dailyCommunication.cdo" [showEmptyMessage]="true"  field="cdo" [minLength]="1"></p-autoComplete>
+    <small class="p-error" >Information is required.</small>
+  </div>
+</div>
+<p-divider></p-divider>
+<div class="p-d-flex p-ai-center p-jc-center p-mt-3 p-mb-2">
+  <div class="field-radiobutton p-mr-3">
+    <p-radioButton class="p-mr-1" name="EC" value="ec" [(ngModel)]="dailyCommunication.status"  inputId="ec"></p-radioButton>
+    <label for="EC">EC</label>
+</div>
+<div class="field-radiobutton  p-mr-3">
+  <p-radioButton class="p-mr-1" name="EP" value="ep"  inputId="ep"  [(ngModel)]="dailyCommunication.status"></p-radioButton>
+  <label for="EP">EP</label>
+</div>
+<div class="field-radiobutton  p-mr-3">
+  <p-radioButton name="TC" value="tc" inputId="tc"  [(ngModel)]="dailyCommunication.status"></p-radioButton>
+  <label for="TC">TC</label>
+</div>
+</div>
+
+<div class="field">
+  <label for="value">Information</label>
+  <textarea id="value" pInputTextarea [(ngModel)]="dailyCommunication.information" required rows="3" cols="20"></textarea>
+  <small class="p-error" *ngIf="submitted && !dailyCommunication.information">Information is required.</small>
+</div>
+
+
+<div class="p-d-flex p-ai-center p-jc-center p-mt-3 p-mb-2">
+  <div class="field-radiobutton p-mr-3">
+    <p-radioButton class="p-mr-1" name="DO" value="Done" [(ngModel)]="dailyCommunication.repairStatus"  inputId="DO"></p-radioButton>
+    <label for="DO">Done</label>
+</div>
+<div class="field-radiobutton  p-mr-3">
+  <p-radioButton class="p-mr-1" name="ND" value="Not done"  inputId="ND"  [(ngModel)]="dailyCommunication.repairStatus"></p-radioButton>
+  <label for="ND">Not done</label>
+</div>
+<div class="field-radiobutton  p-mr-3">
+  <p-radioButton name="N/A" value="N/A" inputId="N/A"  [(ngModel)]="dailyCommunication.repairStatus"></p-radioButton>
+  <label for="N/A">N/A</label>
+</div>
+</div>
+<p-divider></p-divider>
+<div class="p-mt-3">
+  <label for="file">Attached file(s)</label>
+  <p-table  name="file" [value]="dailyCommunication.attachedFiles" >
+     <ng-template pTemplate="caption">
+      <div class="p-d-flex">
+        <input style="display: none;" type="file" (change)="onFileSelected($event)" #fileInput multiple="multiple">
+          <button type="button" pButton pRipple icon="pi pi-upload"  (click)="fileInput.click()" class="p-button-success p-mr-2" pTooltip="Add File" tooltipPosition="bottom"></button>
+
+      </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+            <th>File name</th>
+            <th>Size</th>
+            <th>Type</th>
+        </tr>
+    </ng-template>
+      <ng-template pTemplate="body" let-selectedFile>
+        <tr>
+            <td>{{selectedFile.name}}</td>
+            <td>{{selectedFile.size}}</td>
+            <td>{{selectedFile.type}}</td>
+
+        </tr>
+    </ng-template>
+  </p-table>
+
+  </div>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+      <button pButton pRipple label="Cancel"  icon="pi pi-times" (click)="onCancelDailyCom()" class="p-button-text"></button>
+      <button pButton pRipple label="Save"  (click)="onSaveDailyCom()" icon="pi pi-check" class="p-button-text"></button>
+  </ng-template>
+
+</p-dialog>

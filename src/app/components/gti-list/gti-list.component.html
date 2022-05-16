@@ -1,0 +1,153 @@
+<div>
+  <div class="tmdc-header p-mb-2">
+  <div style="z-index: 20000; height: 50px; color:white" class="p-d-flex p-ai-center p-ml-2 p-mr-2 p-jc-between">
+   <div class="p-d-flex"> <span
+    (click)="backToProgramPage()">{{formatName(currentProgram.name)}}</span>
+<span class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+</span>
+<span (click)="backToProdutionSitePage()" >
+    {{currentSite.name}}
+</span>
+</div>
+TMDC
+<div>
+ <span> P20 : Progress 100% : 0 / 86hrs</span>
+</div>
+<!-- <div class="p-d-flex" *ngIf="stations$ | async as stations">
+  <div *ngFor="let station of stations" class="tm-radio-button">
+    <button pButton pRipple type="button"   [ngClass]="{'p-button-raised': true, 'selected':  station.name == 'P20'}"
+        >{{station.name}} - {{station.progress}}</button>
+</div>
+</div> -->
+  </div>
+  <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="p-d-flex p-jc-between p-ai-center tm-menu-header">
+    <div class="p-d-flex">
+      <p-autoComplete [size]="9" styleClass="p-mr-4 " [(ngModel)]="selectedGtiNumber" placeholder="Reference"
+          [showEmptyMessage]="true" [suggestions]="gtiNumbers" (completeMethod)="filterGtiList($event)"
+          field="rgti_reference" [minLength]="1" (onSelect)="onSelect()" (onClear)="clearGti($event)"
+          [dropdown]="true">
+      </p-autoComplete>
+
+  </div>
+  <div class="p-d-flex p-jc-center p-ai-center tm-br-l">
+    <button class="p-mr-2 p-ml-2 p-d-flex " type="button" pButton icon="pi pi-search-plus"
+       ></button>
+</div>
+
+  <div class="p-d-flex p-jc-center p-ai-center tm-br-l">
+    <button class="p-mr-2 p-ml-2 p-d-flex " type="button" pButton icon="pi pi-filter"
+       ></button>
+</div>
+
+</div>
+  </ng-template>
+
+
+   </p-menubar>
+   </div>
+    <!-- <div class="p-d-flex p-mb-2 p-ai-center  p-jc-between tm-gtsi-header">
+
+
+        <div>
+            <p-splitButton styleClass="p-mr-6" class="p-button-lg" label="MSN {{currentMsnNumber}}"
+                [model]="msnUpdateItems">
+            </p-splitButton>
+            <p-splitButton  label="GTI actions" styleClass="p-button-lg p-button-warning"
+                [model]="gtiActionsItems">
+            </p-splitButton>
+        </div>
+        <div >
+            <!-- TODO -->
+            <!-- <button pButton type="button" class="p-button-lg" [disabled]="true">GTSA</button>
+            <button pButton type="button" class="p-button-lg" [disabled]="true">CDO</button>
+            <button pButton type="button" class="p-button-lg" [disabled]="true">WO</button>
+        </div>
+
+    </div> -->
+    <!-- <p-panel header="Filter" [collapsed]="true" [toggleable]="true" styleClass="p-mb-4 p-ml-2 p-mr-2">
+        Advanced filter
+    </p-panel> -->
+    <div class="p-mt-3 p-ml-3 p-mr-3">
+        <p-treeTable [value]="getGtiList" styleClass="p-treetable-sm" selectionMode="single" [(selection)]="selectedGti"
+            dataKey="gtiNumber" (onNodeSelect)="selectRow($event)" (onNodeUnselect)="unSelectRow($event)">
+
+            <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+                <tr class="tm-tr-ata" [ttRow]="rowNode" *ngIf="rowData.isParent; else notParent">
+                    <td style="margin-left: 5px">
+                        {{rowData.gtiTitle}}
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <ng-template #notParent>
+                    <tr class="tm-tr" [ngClass]="{'tm-row-ns':rowData.gtiStatus === 'NS', 'tm-row-ip' : rowData.gtiStatus === 'IP', 'tm-row-at' : rowData.gtiStatus === 'AT', 'tm-row-fa' : rowData.gtiStatus === 'FA'}"
+                        [ttRow]="rowNode" [ttRow]="rowNode" [ttRow]="rowNode" [ttSelectableRow]="rowNode"
+                        (dblclick)="openGtiDetals(rowData)">
+                        <td>
+                            <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+                            <span *ngIf="rowData.go" class="dot p-mr-1" pTooltip="Tooltip test"  tooltipPosition="left"></span>
+                            <span *ngIf="rowData.noGo" class="noGo-dot p-mr-1" pTooltip="Tooltip test"  tooltipPosition="left"></span>
+
+                            {{rowData.gtiNumber}}
+                        </td>
+                        <td>{{rowData.gtiWorkOrder}}</td>
+                        <td>{{rowData.gtiTitle}}</td>
+                        <td>{{rowData.gtiStatus}}</td>
+                        <td></td>
+                        <td><div *ngIf="rowData.isGti">
+                          <div>
+                          <span class="dot p-mr-1" pTooltip="Tooltip test"  tooltipPosition="left"></span>
+                          <span class="dot" pTooltip="Tooltip test"  tooltipPosition="right"></span>
+                        </div>
+                          <span class="dot p-mr-1" pTooltip="Tooltip test"  tooltipPosition="left"></span>
+                            <span class="dot" pTooltip="Tooltip test"  tooltipPosition="right"></span>
+                        </div>
+
+
+                            </td>
+                    </tr>
+                </ng-template>
+            </ng-template>
+            <!-- <ng-template pTemplate="summary">
+            There are {{gtiList?.length}} GTI
+        </ng-template> -->
+        </p-treeTable>
+    </div>
+
+
+</div>
+
+<p-dialog header="GTI {{selectedRowData?.gtiNumber}}" [modal]="true" [style]="{width: '30vw'}" [(visible)]=" display">
+    <ng-template pTemplate="footer">
+
+        <div>
+        </div>
+        <p-button icon="pi pi-check" label="Save" styleClass="p-button-text"></p-button>
+        <p-button icon="pi pi-times" label="Cancel" styleClass="p-button-text"></p-button>
+
+    </ng-template>
+</p-dialog>
+<div *ngIf="showSpinner" class="p-mt-auto progress-spinner">
+    <p-progressSpinner [style]="{width: '100px', height: '100px'}" styleClass="custom-spinner" strokeWidth="4"
+        fill="var(--surface-ground)"></p-progressSpinner>
+</div>
+
+
+<p-dialog header="TMDC Comment" [(visible)]="commentDialog" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '30vw', height: '25vw'}">
+   <label >Enter text to point associate</label>
+  <textarea class="p-mt-2" pInputTextarea [(ngModel)]="gtiComment" ></textarea>
+  <ng-template pTemplate="footer">
+
+    <div>
+    </div>
+    <button pButton type="button" label="Save" class="p-button-success" (click)="saveComment()"></button>
+    <button pButton type="button" label="Cancel" class="p-button-danger" (click)="closeAddCommentModal()"></button>
+</ng-template>
+</p-dialog>

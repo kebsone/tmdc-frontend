@@ -1,0 +1,36 @@
+:host {
+    .content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: solid 1px #ccc;
+        width: 500px;
+        height: 500px;
+        border-radius: 5px;
+    }
+
+    ::ng-deep {
+        .p-inputgroup-addon {
+            background-color: rgb(8, 35, 75);
+            color: white;
+        }
+
+        .p-inputgroup {
+            height: 60px;
+        }
+
+        button {
+            height: 60px;
+            width: 83%;
+            background-color: rgb(8, 35, 75);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(17, 53, 107);
+        }
+    }
+}

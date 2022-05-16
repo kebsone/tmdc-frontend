@@ -1,0 +1,119 @@
+
+<div class="card">
+      <p-table [value]="currentInformations" dataKey="id" editMode="row" [scrollable]="true" scrollHeight="100px">
+        <ng-template pTemplate="caption">
+          <div class="p-d-flex">
+              <button type="button" pButton pRipple icon="pi pi-plus"  class="p-button-success p-mr-2" label="Add information" tooltipPosition="bottom" (click)="addInformation()"></button>
+              <button type="button" pButton pRipple icon="pi pi-eye"  class="p-button-warning p-ml-auto p-mr-2" pTooltip="More details" (click)="viewMoreDetails()" tooltipPosition="bottom"></button>
+          </div>
+      </ng-template>
+
+          <ng-template pTemplate="body" let-information let-editing="editing" let-ri="rowIndex">
+              <tr [pEditableRow]="information" class="tm-td" >
+                  <td pEditableColumn>
+                      <p-cellEditor >
+                          <ng-template pTemplate="input">
+                              <input  pInputText type="text" [(ngModel)]="information.value">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{information.value}}
+                          </ng-template>
+                      </p-cellEditor>
+                      <button  pButton pRipple type="button" pTooltip="Delete row" pCancelEditableRow icon="pi pi-trash" (click)="deleteRow($event, information, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+
+                  </td>
+
+              </tr>
+          </ng-template>
+      </p-table>
+  </div>
+  <p-dialog [(visible)]="addInformationDialog"  header="Général information" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+      <div class="p-formgrid p-grid">
+        <div class="p-field p-col">
+            <label for="msn">MSN</label>
+            <input type="text" readonly pInputText id="msn" [(ngModel)]="information.msn" required autofocus />
+        </div>
+        <div class="p-field p-col">
+          <label for="poste">Current poste</label>
+          <input type="text" readonly pInputText id="poste" [(ngModel)]="information.poste" required autofocus />
+        </div>
+    </div>
+    <div class="p-formgrid p-grid">
+      <div class="p-field  p-col">
+        <label for="date">Date</label>
+        <input type="text" readonly pInputText id="date" [(ngModel)]="information.date" required autofocus />
+      </div>
+    <div class="p-field  p-col">
+      <label for="dayTime">Day time</label>
+      <input type="text" readonly pInputText id="dayTime" [(ngModel)]="information.dayTime" required autofocus />
+
+  </div>
+</div>
+
+
+        <div class="field">
+            <label for="value">Information</label>
+            <textarea id="value" pInputTextarea [(ngModel)]="information.value" required rows="3" cols="20"></textarea>
+            <small class="p-error" *ngIf="submitted && !information.value">Information is required.</small>
+          </div>
+
+
+
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveInformation()"></button>
+    </ng-template>
+
+</p-dialog>
+
+<!-- VIEW MORE DETAILS -->
+<p-dialog [(visible)]="moreDetailsDialog" [style]="{width: '800px'}" header="Général information" [modal]="true" styleClass="p-fluid">
+  <ng-template pTemplate="header">
+    Zoom General Information
+  </ng-template>
+  <p-table  [value]="currentInformations" >
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex p-jc-between">
+<div>
+          <label class="p-mr-2" for="msn">Date: </label>
+          <span>{{currentDay?.date}} </span></div>
+          <div>
+          <label  class="p-mr-2" for="msn">DayTime:</label>
+          <span>{{dayTime}}</span></div>
+          <div>
+          <label  class="p-mr-2" for="msn">Msn:</label>
+          <span>{{currentNotebook?.msn?.msn}}</span></div>
+          <div>
+          <label  class="p-mr-2" for="msn">Poste:</label>
+          <span>{{currentNotebook?.msn?.poste}}</span></div>
+
+
+</div>
+  </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Information</th>
+            <th>Date</th>
+            <th>Login</th>
+            <th>User name</th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-information>
+        <tr>
+            <td>{{information.value}}</td>
+            <td>{{information.date}}</td>
+            <td>{{information.login}}</td>
+            <td>{{information.userName}}</td>
+        </tr>
+    </ng-template>
+
+  </p-table>
+
+</p-dialog>
+
+

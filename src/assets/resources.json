@@ -1,0 +1,643 @@
+[
+    {
+        "id": "a",
+        "title": "Undef",
+        "reliquat": 0,
+        "gtsi": [
+            {
+                "resizable": false,
+                "uiId": 32,
+                "resourceId": "a",
+                "chapters": [
+                    {
+                        "title": "PREPARATION AVANT ESSAIS 32",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 32",
+                        "order": 2
+                    }
+                ],
+                "title": "TOC032",
+                "wo": "8080321",
+                "className": "tm-event-nd",
+                "groupId": "TOC03232"
+            },
+
+            {
+                "resizable": false,
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC001312",
+                "uiId": 12,
+                "title": "TOC0013",
+                "wo": "8253325",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "PREPARATION AVANT ESSAIS",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "uiId": 13,
+                "groupId": "TOC111213",
+                "title": "TOC1112",
+                "wo": "8253312",
+                "desc": "VO838TOE0087 LMDF 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC004510",
+                "uiId": 10,
+                "title": "TOC0045",
+                "wo": "8253325",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "PREPARATION AVANT ESSAIS",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "uiId": 11,
+                "groupId": "TOC00911",
+                "title": "TOC009",
+                "wo": "8253325",
+                "desc": "VO838TOE0087 LMDF 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 2
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 3
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "uiId": 8,
+                "groupId": "TOC0128",
+                "title": "TOC012",
+                "wo": "8251256",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "PREPARATION AVANT ESSAIS",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "uiId": 9,
+                "groupId": "TOC0139",
+                "title": "TOC013",
+                "wo": "8253458",
+                "desc": "VO838TOE0087 LMDF 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC0156",
+                "uiId": 6,
+                "title": "TOC015",
+                "wo": "1425697",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "PREPARATION AVANT ESSAIS",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC0054",
+                "uiId": 4,
+                "title": "TOC005",
+                "wo": "8253323",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC0027",
+                "uiId": 7,
+                "title": "TOC002",
+                "wo": "8586569",
+                "desc": "VO538TOE0007 LMDF 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC0031",
+                "uiId": 1,
+                "title": "TOC003",
+                "wo": "8653315",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC03131",
+                "uiId": 31,
+                "title": "TOC031",
+                "wo": "8653315",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION BIS 31",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 31",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC02514",
+                "uiId": 14,
+                "title": "TOC025",
+                "wo": "8653254",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 14",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 14",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "groupId": "TOC01515",
+                "resourceId": "a",
+                "uiId": 15,
+                "title": "TOC015",
+                "wo": "8653154",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 15",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 15",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "groupId": "TOC01616",
+                "resourceId": "a",
+                "uiId": 16,
+                "title": "TOC016",
+                "wo": "8653144",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 16",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 16",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "groupId": "TOC01717",
+                "resourceId": "a",
+                "uiId": 17,
+                "title": "TOC017",
+                "wo": "8653147",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 17",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 17",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC01818",
+                "uiId": 18,
+                "title": "TOC018",
+                "wo": "8653418",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 18",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 18",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC01919",
+                "uiId": 19,
+                "title": "TOC019",
+                "wo": "8654317",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 19",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 19",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC02020",
+                "uiId": 20,
+                "title": "TOC020",
+                "wo": "8653417",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 20",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 20",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC02121",
+                "uiId": 21,
+                "title": "TOC021",
+                "wo": "8654317",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 21",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 21",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC02222",
+                "uiId": 22,
+                "title": "TOC022",
+                "wo": "8653222",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 22",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 22",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC02323",
+                "uiId": 23,
+                "title": "TOC023",
+                "wo": "8651323",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 23",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 23",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC02424",
+                "uiId": 24,
+                "title": "TOC024",
+                "wo": "8651324",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 24",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 24",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC02525",
+                "uiId": 25,
+                "title": "TOC025",
+                "wo": "8653317",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 25",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 25",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC02626",
+                "uiId": 26,
+                "title": "TOC026",
+                "wo": "8653717",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 26",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 26",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC02727",
+                "uiId": 27,
+                "title": "TOC027",
+                "wo": "8656317",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 27",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 27",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "groupId": "TOC01728",
+                "resourceId": "a",
+                "uiId": 28,
+                "title": "TOC017",
+                "wo": "8656317",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 28",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 28",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC02929",
+                "uiId": 29,
+                "title": "TOC029",
+                "wo": "8655317",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "resizable": false,
+                "chapters": [
+                    {
+                        "title": "SIMULATION 29",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 29",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "resizable": false,
+                "textColor": "#000",
+                "className": "tm-event-nd",
+                "resourceId": "a",
+                "groupId": "TOC03030",
+                "uiId": 30,
+                "title": "TOC030",
+                "wo": "8653417",
+                "desc": "VO538TOE0007 ATA 36-QSR OHDS CQT 1/2 &3",
+                "chapters": [
+                    {
+                        "title": "SIMULATION 30",
+                        "order": 1
+                    },
+                    {
+                        "title": "OHDS BITE TEST 30",
+                        "order": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "b",
+        "title": "Ligne 02",
+        "reliquat": 3
+    },
+    {
+        "id": "c",
+        "title": "Ligne 03",
+        "reliquat": 3,
+        "essais": 2
+    },
+    {
+        "id": "d",
+        "title": "Ligne 04",
+        "reliquat": 5
+    },
+    {
+        "id": "e",
+        "title": "Ligne 05",
+        "reliquat": 1,
+        "essais": 1
+    },
+    {
+        "id": "f",
+        "title": "SE01",
+        "reliquat": 2
+    }
+]

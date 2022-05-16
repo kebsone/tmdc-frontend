@@ -1,0 +1,22 @@
+:host {
+    .tm-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        border-radius: 5px;
+    }
+
+    .tm-program-card {
+        background: #fff;
+        padding: 8px;
+        z-index: 289;
+        box-shadow: 1px 1px 1px 1px rgb(140, 167, 206);
+        cursor: pointer;
+    }
+
+    .tm-program-card:hover {
+        background-color: lightblue;
+    }
+}

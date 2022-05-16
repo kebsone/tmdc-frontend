@@ -1,0 +1,63 @@
+:host {
+    .tm-comment-list {
+        height: 145px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin: 5px;
+    }
+    .tm-pointer {
+        cursor: pointer !important;
+    }
+    .tm-br-black {
+        border: solid 1px #ccc !important;
+    }
+    .tm-br-r-black {
+        border-right: solid 1px #ccc !important;
+    }
+    .tm-br-l-black {
+        border-left: solid 1px #ccc !important;
+    }
+
+    .tm-br-b-black {
+        border-bottom: solid 1px #ccc !important;
+    }
+    .tm-msn-bg {
+        background: #b1eaff; ///linear-gradient(to right, rgb(21, 91, 219), rgb(166, 235, 240));
+    }
+    .tm-msn-card {
+        width: 324px;
+        border: solid 1px #ccc;
+        border-radius: 5px;
+        height: 400px;
+        padding-bottom: 10px;
+    }
+
+    .tm-msn-number-width {
+        width: 50%;
+    }
+
+    .tm-msn-card-table {
+        width: 100%;
+
+        tr {
+            td:nth-child(1),
+            :nth-child(2),
+            :nth-child(3) {
+                border-right: solid 1px #ccc;
+            }
+        }
+        tr {
+            td:nth-child(3),
+            :nth-child(2) {
+                padding-left: 3px;
+            }
+        }
+    }
+
+    .tm-msn-card-number {
+        font-size: 16px;
+        font-weight: 900;
+        font-family: fantasy;
+        letter-spacing: 1px;
+    }
+}

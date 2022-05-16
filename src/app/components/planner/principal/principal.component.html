@@ -1,0 +1,137 @@
+<div>
+    <!-- HEADER -->
+    <div class="tmdc-header  p-mb-2">
+      <div  class="tm-sub-header p-d-flex p-ai-center p-ml-2 p-mr-2 p-jc-between">
+       <div class="p-d-flex">  <span
+        (click)="backToProgramListPage()">{{formatName(currentProgram.name)}}</span>
+    <span class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+    </span>
+    <span  (click)="backToSiteListPage()"> {{currentSite.name}} </span>
+    <span class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+    </span>
+    <span (click)="backToMsnsListPage()" >
+      MSN {{currentMsn.msnNumber}}
+    </span>
+    </div>
+    TMDC
+    <div  *ngIf="currentMsn.msnNumber !== '000'">
+      <span class="start p-mr-2">
+          <i class="pi pi-map-marker p-mr-1"></i>{{currentMsn?.start}}
+      </span>
+      <span class="end"><i class="pi pi-map-marker p-mr-1"></i>{{currentMsn?.end}}</span>
+  </div>
+
+
+    </div>
+      <div class="p-d-flex p-jc-between p-ai-center p-ml-2">
+          <div class="p-d-flex">
+          <div *ngFor="let poste of TmdcUtils.sortLogicalStation(postes)" class="tm-radio-button">
+            <button pButton pRipple type="button" [disabled]="modeValue =='view'" (click)="onPosteChanged(poste.name)"
+                [ngClass]="{'p-button-raised': true, 'selected': currentMsn.selectedPoste=== poste.name}"
+                >{{poste.name}}</button>
+        </div>
+      </div>
+        <div class="p-d-flex p-jc-between p-mt-2 p-mb-3  p-ai-center">
+          <div *ngIf="modeValue =='view'" class="p-d-flex p-jc-center p-ai-center p-mr-4">
+            <label class="p-mr-2" style="color: white;">Maximum size</label>
+            <p-dropdown  [options]="sizes" [(ngModel)]="selectedSize" optionLabel="value" (onChange)="sizeChanged()">
+            </p-dropdown>
+        </div>
+  <!-- Edition mode -->
+  <div class="p-d-flex p-jc-center p-ai-center  p-mr-4">
+    <p-selectButton [options]="stateOptions" [(ngModel)]="modeValue" optionLabel="label" optionValue="value"
+        (onOptionClick)="onModeChanged($event)" optionDisabled="inactive">
+    </p-selectButton>
+</div>
+          <div *ngIf="modeValue =='edit' && tmdcMsns$ | async as tmdcMsns" class="p-d-flex p-jc-center p-ai-center p-mr-2">
+            <p-dropdown  [options]="tmdcMsns" placeholder="Apply planner of" [(ngModel)]="selectedTmdcMsn"
+                optionLabel="msnNumber" (onChange)="applyPlannerOf()" [showClear]="true">
+            </p-dropdown>
+        </div>
+      </div>
+        <!-- <button pButton pRipple type="button" [disabled]="disabledApply" (click)="savePlannerState()"
+            class="p-button-raised p-button-lg">
+            Save
+        </button> -->
+        <div class="p-d-flex p-ai-center">
+
+          <div class="tmdc-action-button">
+            <button class="p-d-flex " [disabled]="modeValue =='view' || disabledApply" type="button" (click)="onSave()" label="Apply changes" pButton icon="pi pi pi-check-circle"
+               ></button>
+        </div>
+
+        <!-- <div class="tmdc-action-button">
+          <button class="p-ml-2 p-d-flex " type="button" [disabled]="modeValue =='view'"  label="Add GTI" pButton icon="pi pi-plus-circle"></button>
+        </div> -->
+        <!-- <button pButton pRipple type="button" label="Add GTI" [disabled]="modeValue =='view'" icon="pi pi-plus" (click)="savePlannerState()"  class="p-button-outlined p-button-warning"></button> -->
+      </div>
+
+
+
+
+
+
+    </div>
+       </div>
+    <!-- <div class="p-d-flex  p-jc-between tm-header-planner p-ml-2 p-mt-3 p-mr-2 p-mb-3"> -->
+        <!-- <div class="p-d-flex">
+            <button pButton pRipple type="button" class="p-button-raised p-button-lg"
+                (click)="backToProgramListPage()">{{formatName(currentProgram.name)}}</button>
+            <div class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+            </div>
+            <button pButton pRipple type="button" class="p-button-raised p-button-lg" (click)="backToSiteListPage()">
+                {{currentSite.name}}
+            </button>
+            <div class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+            </div>
+            <button pButton pRipple type="button" (click)="backToMsnsListPage()" class="p-button-raised p-button-lg">
+                MSN {{currentMsn.msnNumber}}
+            </button>
+
+            <div class="p-d-flex p-jc-center"><i class="pi pi-chevron-right p-ml-2 p-mr-2 p-mb-auto p-mt-auto"></i>
+            </div>
+            <button pButton pRipple type="button" class="p-button-raised p-button-lg">
+                {{currentMsn.selectedPoste}}
+            </button>
+        </div> -->
+
+        <!-- Other options -->
+
+
+
+
+        <!-- <div *ngIf="modeValue ==='edit' && tmdcMsns$ | async as tmdcMsns" class="p-d-flex p-jc-center p-ai-center">
+            <p-dropdown [options]="tmdcMsns" placeholder="Apply planner of" [(ngModel)]="selectedTmdcMsn"
+                optionLabel="msnNumber" (onChange)="applyPlannerOf()" [showClear]="true">
+            </p-dropdown>
+        </div>
+        <button pButton pRipple type="button" [disabled]="disabledApply" (click)="savePlannerState()"
+            class="p-button-raised p-button-lg">
+            Save
+        </button> -->
+
+    <!-- </div> -->
+    <!-- BODY -->
+    <div *ngIf="modeValue === 'edit'">
+
+        <tm-planner  [mode]="'edit'" [currentMsn]="currentMsn"
+            [hourOrder]="hourOrder" (onTmdcGtisUpdated)="getGtsis($event)" (onDeleteGtisEvent)="deleteGtis($event)"
+            (onEditGtisEvent)="editGtis($event)">
+        </tm-planner>
+    </div>
+    <div *ngIf="modeValue === 'view'" class="p-d-flex p-flex-column">
+        <div *ngFor="let interval of intervals;let index = index">
+            <tm-planner [mode]="'view'" [currentMsn]="currentMsn" [hourOrder]="index*selectedSize.value + 1"
+                [interval]="interval">
+            </tm-planner>
+        </div>
+
+    </div>
+</div>
+
+<div *ngIf="showSpinner" class="p-mt-auto progress-spinner">
+    <p-progressSpinner [style]="{width: '100px', height: '100px'}" styleClass="custom-spinner" strokeWidth="4"
+        fill="var(--surface-ground)"></p-progressSpinner>
+</div>
+
+<p-toast></p-toast>

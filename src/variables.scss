@@ -1,0 +1,107 @@
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$color-grey1: #717171;
+$color-grey2: #cccccc;
+$color-grey12: #a2a2a2;
+$color-outline: #b1eaff;
+$color-grey3: #7c7c7c;
+
+$grays: (
+    '100': $gray-100,
+    '200': $gray-200,
+    '300': $gray-300,
+    '400': $gray-400,
+    '500': $gray-500,
+    '600': $gray-600,
+    '700': $gray-700,
+    '800': $gray-800,
+    '900': $gray-900
+);
+$blue1: rgb(0, 45, 128) !default;
+$blue: #002855 !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #e02828 !default;
+$red1: red !default;
+$orange: #ff8e39 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$border: #ccc !default;
+$outline: #b1eaff !default;
+$focus: #effbff !default;
+$hint: #a2a2a2 !default;
+$disable-border: #e2e2e2 !default;
+
+$green-1: #379d20;
+$blue-hover: #e6f8ff;
+$blue-hover-half-opacity: #ecf5f9;
+
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $orange !default;
+$error: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+$pinkish-grey: #cccccc;
+$white-three: #ffffff;
+$white-two: #f7f7f7; // backgrounds
+$greyish-brown: #444444; // titles
+$eggshell: #ffffd2; // selected lines
+$eggshell-opacity: #ffffd29c; // selected lines with opacity
+$cerulean: #007bc6; // buttons selected
+$dark-blue: #002855;
+$color-blue2: #3a5b7c;
+$badge-product: #3a99d8;
+$badge-folder: #444444;
+$badge-specific: #ec771e;
+$light-yellow: #fff6d7; // warning banner background
+$white-four: #f2f2f2f2; // default grid cell background
+$pink-two: #ff7878; // charge LT type color
+
+$badge-providing-data: #3a99d8;
+$blue-name: #2f85cf;
+$theme-colors: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'error': $error,
+    'light': $light,
+    'dark': $dark,
+    'border': $border,
+    'gray': $gray-200,
+    'green': $green,
+    'gray-dark': $gray-400,
+    'white': $white,
+    'pinkish-grey': $pinkish-grey,
+    'white-three': $white-three,
+    'white-two': $white-two,
+    'greyish-brown': $greyish-brown,
+    'eggshell': $eggshell,
+    'cerulean': $cerulean,
+    'color-grey1': $color-grey1,
+    'black': $black,
+    'color-blue1': $badge-product,
+    'orange': $badge-specific,
+    'color-blue2': $color-blue2,
+    'color-grey2': $color-grey2,
+    'green1': $green-1,
+    'pink-two': $pink-two
+);

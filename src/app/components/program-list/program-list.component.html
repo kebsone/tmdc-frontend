@@ -1,0 +1,18 @@
+<tm-header></tm-header>
+<h4 style="margin-top: 150px;">Please choose a program to display MSNs</h4>
+
+<div class="tm-content p-ml-auto p-mr-auto">
+
+    <div class="p-grid p-ml-8">
+        <div class="p-col-8 p-md-4 col-offset-3" *ngFor=" let program of programs">
+            <div class="tm-program-card">
+                <img alt="image" src="assets/{{getCode(program.name)}}.svg" (click)="programChoosed(program)" />
+                <div>
+                    <span>{{program.name}}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
